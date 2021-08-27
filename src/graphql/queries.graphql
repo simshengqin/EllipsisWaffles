@@ -1,0 +1,240 @@
+# this is an auto generated file. This will be overwritten
+query GetUser($id: ID!) {
+  getUser(id: $id) {
+    id
+    username
+    cart
+    contact_number
+    createdAt
+    updatedAt
+  }
+}
+query ListUsers(
+  $filter: ModelUserFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      username
+      cart
+      contact_number
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetCompany($id: ID!) {
+  getCompany(id: $id) {
+    id
+    name
+    address
+    rating
+    type
+    latitude
+    longitude
+    createdAt
+    updatedAt
+  }
+}
+query ListCompanies(
+  $filter: ModelCompanyFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listCompanies(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      address
+      rating
+      type
+      latitude
+      longitude
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetProduct($id: ID!) {
+  getProduct(id: $id) {
+    id
+    name
+    company_id
+    image_url
+    price
+    createdAt
+    updatedAt
+  }
+}
+query ListProducts(
+  $filter: ModelProductFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listProducts(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      company_id
+      image_url
+      price
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetTransaction($id: ID!) {
+  getTransaction(id: $id) {
+    id
+    user_id
+    company_name
+    company_address
+    product_name
+    price
+    status
+    createdAt
+    updatedAt
+  }
+}
+query ListTransactions(
+  $filter: ModelTransactionFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listTransactions(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      user_id
+      company_name
+      company_address
+      product_name
+      price
+      status
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetFinanceAccount($id: ID!) {
+  getFinanceAccount(id: $id) {
+    id
+    name
+    account_number
+    amount
+    createdAt
+    updatedAt
+  }
+}
+query ListFinanceAccounts(
+  $filter: ModelFinanceAccountFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listFinanceAccounts(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      account_number
+      amount
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetLoan($id: ID!) {
+  getLoan(id: $id) {
+    id
+    company_name
+    company_address
+    company_number
+    applicant_name
+    applicant_id
+    loan_amount
+    payment_period
+    interest_rate
+    loan_approval_date
+    reason_for_loan
+    loan_period
+    maturity_date
+    paying_account_id
+    amount_unpaid
+    status
+    business_proposal_id
+    createdAt
+    updatedAt
+  }
+}
+query ListLoans(
+  $filter: ModelLoanFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listLoans(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      company_name
+      company_address
+      company_number
+      applicant_name
+      applicant_id
+      loan_amount
+      payment_period
+      interest_rate
+      loan_approval_date
+      reason_for_loan
+      loan_period
+      maturity_date
+      paying_account_id
+      amount_unpaid
+      status
+      business_proposal_id
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetBusinessProposal($id: ID!) {
+  getBusinessProposal(id: $id) {
+    id
+    monthly_revenue
+    monthly_expense
+    monthly_profit
+    available_goldman_sachs_account
+    company_asset
+    other_capital
+    cash_on_hand
+    other_liablities
+    createdAt
+    updatedAt
+  }
+}
+query ListBusinessProposals(
+  $filter: ModelBusinessProposalFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listBusinessProposals(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      monthly_revenue
+      monthly_expense
+      monthly_profit
+      available_goldman_sachs_account
+      company_asset
+      other_capital
+      cash_on_hand
+      other_liablities
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}

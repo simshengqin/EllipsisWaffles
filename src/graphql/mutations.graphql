@@ -1,0 +1,349 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateUser(
+  $input: CreateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  createUser(input: $input, condition: $condition) {
+    id
+    username
+    cart
+    contact_number
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateUser(
+  $input: UpdateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  updateUser(input: $input, condition: $condition) {
+    id
+    username
+    cart
+    contact_number
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteUser(
+  $input: DeleteUserInput!
+  $condition: ModelUserConditionInput
+) {
+  deleteUser(input: $input, condition: $condition) {
+    id
+    username
+    cart
+    contact_number
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateCompany(
+  $input: CreateCompanyInput!
+  $condition: ModelCompanyConditionInput
+) {
+  createCompany(input: $input, condition: $condition) {
+    id
+    name
+    address
+    rating
+    type
+    latitude
+    longitude
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateCompany(
+  $input: UpdateCompanyInput!
+  $condition: ModelCompanyConditionInput
+) {
+  updateCompany(input: $input, condition: $condition) {
+    id
+    name
+    address
+    rating
+    type
+    latitude
+    longitude
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteCompany(
+  $input: DeleteCompanyInput!
+  $condition: ModelCompanyConditionInput
+) {
+  deleteCompany(input: $input, condition: $condition) {
+    id
+    name
+    address
+    rating
+    type
+    latitude
+    longitude
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateProduct(
+  $input: CreateProductInput!
+  $condition: ModelProductConditionInput
+) {
+  createProduct(input: $input, condition: $condition) {
+    id
+    name
+    company_id
+    image_url
+    price
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateProduct(
+  $input: UpdateProductInput!
+  $condition: ModelProductConditionInput
+) {
+  updateProduct(input: $input, condition: $condition) {
+    id
+    name
+    company_id
+    image_url
+    price
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteProduct(
+  $input: DeleteProductInput!
+  $condition: ModelProductConditionInput
+) {
+  deleteProduct(input: $input, condition: $condition) {
+    id
+    name
+    company_id
+    image_url
+    price
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateTransaction(
+  $input: CreateTransactionInput!
+  $condition: ModelTransactionConditionInput
+) {
+  createTransaction(input: $input, condition: $condition) {
+    id
+    user_id
+    company_name
+    company_address
+    product_name
+    price
+    status
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateTransaction(
+  $input: UpdateTransactionInput!
+  $condition: ModelTransactionConditionInput
+) {
+  updateTransaction(input: $input, condition: $condition) {
+    id
+    user_id
+    company_name
+    company_address
+    product_name
+    price
+    status
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteTransaction(
+  $input: DeleteTransactionInput!
+  $condition: ModelTransactionConditionInput
+) {
+  deleteTransaction(input: $input, condition: $condition) {
+    id
+    user_id
+    company_name
+    company_address
+    product_name
+    price
+    status
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateFinanceAccount(
+  $input: CreateFinanceAccountInput!
+  $condition: ModelFinanceAccountConditionInput
+) {
+  createFinanceAccount(input: $input, condition: $condition) {
+    id
+    name
+    account_number
+    amount
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateFinanceAccount(
+  $input: UpdateFinanceAccountInput!
+  $condition: ModelFinanceAccountConditionInput
+) {
+  updateFinanceAccount(input: $input, condition: $condition) {
+    id
+    name
+    account_number
+    amount
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteFinanceAccount(
+  $input: DeleteFinanceAccountInput!
+  $condition: ModelFinanceAccountConditionInput
+) {
+  deleteFinanceAccount(input: $input, condition: $condition) {
+    id
+    name
+    account_number
+    amount
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateLoan(
+  $input: CreateLoanInput!
+  $condition: ModelLoanConditionInput
+) {
+  createLoan(input: $input, condition: $condition) {
+    id
+    company_name
+    company_address
+    company_number
+    applicant_name
+    applicant_id
+    loan_amount
+    payment_period
+    interest_rate
+    loan_approval_date
+    reason_for_loan
+    loan_period
+    maturity_date
+    paying_account_id
+    amount_unpaid
+    status
+    business_proposal_id
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateLoan(
+  $input: UpdateLoanInput!
+  $condition: ModelLoanConditionInput
+) {
+  updateLoan(input: $input, condition: $condition) {
+    id
+    company_name
+    company_address
+    company_number
+    applicant_name
+    applicant_id
+    loan_amount
+    payment_period
+    interest_rate
+    loan_approval_date
+    reason_for_loan
+    loan_period
+    maturity_date
+    paying_account_id
+    amount_unpaid
+    status
+    business_proposal_id
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteLoan(
+  $input: DeleteLoanInput!
+  $condition: ModelLoanConditionInput
+) {
+  deleteLoan(input: $input, condition: $condition) {
+    id
+    company_name
+    company_address
+    company_number
+    applicant_name
+    applicant_id
+    loan_amount
+    payment_period
+    interest_rate
+    loan_approval_date
+    reason_for_loan
+    loan_period
+    maturity_date
+    paying_account_id
+    amount_unpaid
+    status
+    business_proposal_id
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateBusinessProposal(
+  $input: CreateBusinessProposalInput!
+  $condition: ModelBusinessProposalConditionInput
+) {
+  createBusinessProposal(input: $input, condition: $condition) {
+    id
+    monthly_revenue
+    monthly_expense
+    monthly_profit
+    available_goldman_sachs_account
+    company_asset
+    other_capital
+    cash_on_hand
+    other_liablities
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateBusinessProposal(
+  $input: UpdateBusinessProposalInput!
+  $condition: ModelBusinessProposalConditionInput
+) {
+  updateBusinessProposal(input: $input, condition: $condition) {
+    id
+    monthly_revenue
+    monthly_expense
+    monthly_profit
+    available_goldman_sachs_account
+    company_asset
+    other_capital
+    cash_on_hand
+    other_liablities
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteBusinessProposal(
+  $input: DeleteBusinessProposalInput!
+  $condition: ModelBusinessProposalConditionInput
+) {
+  deleteBusinessProposal(input: $input, condition: $condition) {
+    id
+    monthly_revenue
+    monthly_expense
+    monthly_profit
+    available_goldman_sachs_account
+    company_asset
+    other_capital
+    cash_on_hand
+    other_liablities
+    createdAt
+    updatedAt
+  }
+}

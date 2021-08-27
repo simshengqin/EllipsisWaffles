@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ellipsiswaffles-dev-155122-authRole",
+      "UnauthRoleArn": "arn:aws:iam::156257273650:role/amplify-ellipsiswaffles-dev-155122-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::156257273650:role/amplify-ellipsiswaffles-dev-155122-authRole",
+      "Region": "ap-southeast-1",
+      "DeploymentBucketName": "amplify-ellipsiswaffles-dev-155122-deployment",
+      "UnauthRoleName": "amplify-ellipsiswaffles-dev-155122-unauthRole",
+      "StackName": "amplify-ellipsiswaffles-dev-155122",
+      "StackId": "arn:aws:cloudformation:ap-southeast-1:156257273650:stack/amplify-ellipsiswaffles-dev-155122/93ebc6a0-070b-11ec-841a-06e612b9775e",
+      "AmplifyAppId": "d2cd0nj4txtsu6"
+    },
+    "categories": {
+      "auth": {
+        "ellipsiswafflesda153e12": {}
+      }
+    }
+  }
+}

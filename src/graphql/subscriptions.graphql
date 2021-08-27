@@ -1,0 +1,286 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateUser {
+  onCreateUser {
+    id
+    username
+    cart
+    contact_number
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateUser {
+  onUpdateUser {
+    id
+    username
+    cart
+    contact_number
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteUser {
+  onDeleteUser {
+    id
+    username
+    cart
+    contact_number
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateCompany {
+  onCreateCompany {
+    id
+    name
+    address
+    rating
+    type
+    latitude
+    longitude
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateCompany {
+  onUpdateCompany {
+    id
+    name
+    address
+    rating
+    type
+    latitude
+    longitude
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteCompany {
+  onDeleteCompany {
+    id
+    name
+    address
+    rating
+    type
+    latitude
+    longitude
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateProduct {
+  onCreateProduct {
+    id
+    name
+    company_id
+    image_url
+    price
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateProduct {
+  onUpdateProduct {
+    id
+    name
+    company_id
+    image_url
+    price
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteProduct {
+  onDeleteProduct {
+    id
+    name
+    company_id
+    image_url
+    price
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateTransaction {
+  onCreateTransaction {
+    id
+    user_id
+    company_name
+    company_address
+    product_name
+    price
+    status
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateTransaction {
+  onUpdateTransaction {
+    id
+    user_id
+    company_name
+    company_address
+    product_name
+    price
+    status
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteTransaction {
+  onDeleteTransaction {
+    id
+    user_id
+    company_name
+    company_address
+    product_name
+    price
+    status
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateFinanceAccount {
+  onCreateFinanceAccount {
+    id
+    name
+    account_number
+    amount
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateFinanceAccount {
+  onUpdateFinanceAccount {
+    id
+    name
+    account_number
+    amount
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteFinanceAccount {
+  onDeleteFinanceAccount {
+    id
+    name
+    account_number
+    amount
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateLoan {
+  onCreateLoan {
+    id
+    company_name
+    company_address
+    company_number
+    applicant_name
+    applicant_id
+    loan_amount
+    payment_period
+    interest_rate
+    loan_approval_date
+    reason_for_loan
+    loan_period
+    maturity_date
+    paying_account_id
+    amount_unpaid
+    status
+    business_proposal_id
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateLoan {
+  onUpdateLoan {
+    id
+    company_name
+    company_address
+    company_number
+    applicant_name
+    applicant_id
+    loan_amount
+    payment_period
+    interest_rate
+    loan_approval_date
+    reason_for_loan
+    loan_period
+    maturity_date
+    paying_account_id
+    amount_unpaid
+    status
+    business_proposal_id
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteLoan {
+  onDeleteLoan {
+    id
+    company_name
+    company_address
+    company_number
+    applicant_name
+    applicant_id
+    loan_amount
+    payment_period
+    interest_rate
+    loan_approval_date
+    reason_for_loan
+    loan_period
+    maturity_date
+    paying_account_id
+    amount_unpaid
+    status
+    business_proposal_id
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateBusinessProposal {
+  onCreateBusinessProposal {
+    id
+    monthly_revenue
+    monthly_expense
+    monthly_profit
+    available_goldman_sachs_account
+    company_asset
+    other_capital
+    cash_on_hand
+    other_liablities
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateBusinessProposal {
+  onUpdateBusinessProposal {
+    id
+    monthly_revenue
+    monthly_expense
+    monthly_profit
+    available_goldman_sachs_account
+    company_asset
+    other_capital
+    cash_on_hand
+    other_liablities
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteBusinessProposal {
+  onDeleteBusinessProposal {
+    id
+    monthly_revenue
+    monthly_expense
+    monthly_profit
+    available_goldman_sachs_account
+    company_asset
+    other_capital
+    cash_on_hand
+    other_liablities
+    createdAt
+    updatedAt
+  }
+}

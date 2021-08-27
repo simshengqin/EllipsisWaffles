@@ -5,7 +5,7 @@ import {MDBBootstrapModule} from "angular-bootstrap-md";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {AmplifyUIAngularModule} from "@aws-amplify/ui-angular";
-import { UserHomeComponent } from './ui/user/user-home/user-home.component';
+import { UserExploreComponent } from './ui/user/user-explore/user-explore.component';
 import {HeaderComponent} from "./shared/components/header/header.component";
 import {Amplify} from "aws-amplify";
 import awsconfig from '../aws-exports';
@@ -17,7 +17,7 @@ import {UserViewTransactionsComponent} from "./ui/user/user-view-transactions/us
 import {CompanyCreateLoanComponent} from "./ui/company/company-create-loan/company-create-loan.component";
 import {CompanyCreateProductComponent} from "./ui/company/company-create-product/company-create-product.component";
 import {CompanyViewLoansComponent} from "./ui/company/company-view-loans/company-view-loans.component";
-import {CompanyViewTransactionsComponent} from "./ui/company/company-view-transactions/company-view-transactions.component";
+import {CompanyViewTransactionsComponent} from "./ui/company/company-orders/company-view-transactions.component";
 import {CompanyHomeComponent} from "./ui/company/company-home/company-home.component";
 Amplify.configure(awsconfig);
 
@@ -25,7 +25,7 @@ Amplify.configure(awsconfig);
   declarations: [
     AppComponent,
     HeaderComponent,
-    UserHomeComponent,
+    UserExploreComponent,
     UserViewCompaniesComponent,
     UserViewCompanyComponent,
     UserCheckoutComponent,

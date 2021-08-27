@@ -1,0 +1,87 @@
+type User @model {
+  id: ID!
+  username: String
+  cart: String
+  contact_number: Int
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type Company @model {
+  id: ID!
+  name: String
+  address: String
+  rating: Float
+  type: String
+  latitude: Float
+  longitude: Float
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type Product @model {
+  id: ID!
+  name: String
+  company_id: String
+  image_url: String
+  price: Float
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type Transaction @model {
+  id: ID!
+  user_id: String
+  company_name: String,
+  company_address: String,
+  product_name: String,
+  price: Float,
+  status: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type FinanceAccount @model {
+  id: ID!
+  name: String
+  account_number: String,
+  amount: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type Loan @model {
+  id: ID!
+  company_name: String,
+  company_address: String,
+  company_number: Float,
+  applicant_name: String,
+  applicant_id: String,
+  loan_amount: Float,
+  payment_period: String,
+  interest_rate: Float,
+  loan_approval_date: String,
+  reason_for_loan: String,
+  loan_period: String,
+  maturity_date: String,
+  paying_account_id: String,
+  amount_unpaid: Float,
+  status: String,
+  business_proposal_id: String,
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+type BusinessProposal @model {
+  id: ID!,
+  monthly_revenue: Float,
+  monthly_expense: Float,
+  monthly_profit: Float,
+  available_goldman_sachs_account: Float,
+  company_asset: Float,
+  other_capital: Float,
+  cash_on_hand: Float,
+  other_liablities: Float,
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
