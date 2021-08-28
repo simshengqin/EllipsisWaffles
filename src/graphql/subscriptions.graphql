@@ -38,6 +38,7 @@ subscription OnCreateCompany {
     type
     latitude
     longitude
+    image_url
     createdAt
     updatedAt
   }
@@ -51,6 +52,7 @@ subscription OnUpdateCompany {
     type
     latitude
     longitude
+    image_url
     createdAt
     updatedAt
   }
@@ -64,6 +66,7 @@ subscription OnDeleteCompany {
     type
     latitude
     longitude
+    image_url
     createdAt
     updatedAt
   }
@@ -280,6 +283,51 @@ subscription OnDeleteBusinessProposal {
     other_capital
     cash_on_hand
     other_liablities
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateStock {
+  onCreateStock {
+    id
+    date
+    open
+    high
+    low
+    close
+    adjClose
+    volume
+    symbol
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateStock {
+  onUpdateStock {
+    id
+    date
+    open
+    high
+    low
+    close
+    adjClose
+    volume
+    symbol
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteStock {
+  onDeleteStock {
+    id
+    date
+    open
+    high
+    low
+    close
+    adjClose
+    volume
+    symbol
     createdAt
     updatedAt
   }
