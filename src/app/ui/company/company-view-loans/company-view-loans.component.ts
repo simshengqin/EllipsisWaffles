@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {APIService, Company, Loan} from "../../../API.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-company-view-loans',
@@ -10,6 +11,7 @@ export class CompanyViewLoansComponent implements OnInit {
   loans: Loan[] = [];
   constructor(
     private api: APIService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
@@ -23,5 +25,10 @@ export class CompanyViewLoansComponent implements OnInit {
     });
   }
 
+  onLoanCLick(loan: Loan) {
+    // this.router.navigate(['/company/view-loan?id='+ loan.id] );
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
+      this.router.navigate(['company/view-loan'], {queryParams: {id: loan.id}}));
+  }
 }
 
