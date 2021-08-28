@@ -26,6 +26,7 @@ import {CommonModule} from "@angular/common";
 import {UserHomeComponent} from "./ui/user/user-home/user-home.component";
 import {UserMealSubscriptionComponent} from "./ui/user/user-meal-subscription/user-meal-subscription.component";
 import {AlertModule} from "ngx-bootstrap/alert";
+import {FormsModule} from "@angular/forms";
 Amplify.configure(awsconfig);
 
 @NgModule({
@@ -48,15 +49,16 @@ Amplify.configure(awsconfig);
     CompanyViewLoansComponent,
     CompanyViewTransactionsComponent
   ],
-    imports: [
-        BrowserModule,
-        CommonModule,
-        AppRoutingModule,
-        AmplifyUIAngularModule,
-        NgbModule,
-        MDBBootstrapModule.forRoot(),
-        AlertModule.forRoot()
-    ],
+  imports: [
+    BrowserModule,
+    CommonModule,
+    AppRoutingModule,
+    AmplifyUIAngularModule,
+    NgbModule,
+    MDBBootstrapModule.forRoot(),
+    AlertModule.forRoot(),
+    FormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
