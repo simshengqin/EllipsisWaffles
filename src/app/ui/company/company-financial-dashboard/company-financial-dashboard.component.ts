@@ -69,9 +69,6 @@ export class CompanyFinancialDashboardComponent implements OnInit {
     responsive: true
   };
   
-
-
-
   constructor(
     private api: APIService,
   ) { }
