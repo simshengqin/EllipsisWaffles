@@ -13,7 +13,20 @@ export class CompanyViewTransactionsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    // this.createTransaction();
     this.loadTransactions();
+  }
+  async createTransaction(): Promise<void> {
+    const newTransaction = {
+      user_id: "1",
+      company_name: "Song Kee Fish Ball Noodle",
+      company_address: "Blk 79 Circuit Road",
+      product_name: "Fishball Noodle",
+      price: 3.56,
+      status: "completed"
+    };
+    const newTransactionDB = await this.api.CreateTransaction(newTransaction);
+    console.log(newTransactionDB);
   }
 
   loadTransactions(): void {

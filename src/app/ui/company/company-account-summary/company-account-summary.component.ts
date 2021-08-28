@@ -14,8 +14,19 @@ export class CompanyAccountSummaryComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    // this.createFinanceAccount();
     this.loadFinanceAccounts();
     this.loadLoans();
+  }
+  async createFinanceAccount(): Promise<void> {
+    const newFinanceAccount = {
+      name: "Platinum Black",
+      account_number: "00-0000-000-0",
+      amount: "$10000"
+    };
+    const newFinanceAccountDB = await this.api.CreateFinanceAccount(newFinanceAccount);
+    console.log("Created new finance account");
+    console.log(newFinanceAccountDB);
   }
   loadFinanceAccounts(): void {
     this.api.ListFinanceAccounts().then(event => {

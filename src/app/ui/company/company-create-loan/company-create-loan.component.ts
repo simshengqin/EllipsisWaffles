@@ -18,8 +18,6 @@ export class CompanyCreateLoanComponent implements OnInit {
 
   async createLoan(): Promise<void> {
     const newLoan = {
-      company_id: "c1fe4026-5c99-4b2b-8bdc-6cb5eaa68d4b",
-      amount: 10000,
       company_name: "Song Kee Fish Ball Noodle",
       company_address: "Blk 79 Circuit Road",
       company_number: 91234567,
