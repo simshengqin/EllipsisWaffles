@@ -25,6 +25,7 @@ import {CompanyFinancialDashboardComponent} from "./ui/company/company-financial
 import {CommonModule} from "@angular/common";
 import {UserHomeComponent} from "./ui/user/user-home/user-home.component";
 import {UserMealSubscriptionComponent} from "./ui/user/user-meal-subscription/user-meal-subscription.component";
+import {AlertModule} from "ngx-bootstrap/alert";
 Amplify.configure(awsconfig);
 
 @NgModule({
@@ -54,6 +55,7 @@ Amplify.configure(awsconfig);
         AmplifyUIAngularModule,
         NgbModule,
         MDBBootstrapModule.forRoot(),
+        AlertModule.forRoot()
     ],
   providers: [],
   bootstrap: [AppComponent]
