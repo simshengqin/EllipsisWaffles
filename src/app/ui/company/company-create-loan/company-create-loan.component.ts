@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {APIService, BusinessProposal, Company, Loan} from "../../../API.service";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-company-create-loan',
@@ -12,6 +13,7 @@ export class CompanyCreateLoanComponent implements OnInit {
   newBusinessProposal: BusinessProposal = {};
   constructor(
     private api: APIService,
+    private toastrService: ToastrService,
   ) { }
 
   ngOnInit(): void {
@@ -45,6 +47,7 @@ export class CompanyCreateLoanComponent implements OnInit {
     const newLoanDB = await this.api.CreateLoan(this.newLoan);
     console.log(newLoanDB);
     this.createBusinessProposal();
+    this.toastrService.success('Successfully created loan!');
   }
   async createBusinessProposal(): Promise<void> {
     console.log(this.newBusinessProposal);

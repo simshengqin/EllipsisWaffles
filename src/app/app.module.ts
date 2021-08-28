@@ -27,6 +27,8 @@ import {UserHomeComponent} from "./ui/user/user-home/user-home.component";
 import {UserMealSubscriptionComponent} from "./ui/user/user-meal-subscription/user-meal-subscription.component";
 import {AlertModule} from "ngx-bootstrap/alert";
 import {FormsModule} from "@angular/forms";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {ToastrModule} from "ngx-toastr";
 Amplify.configure(awsconfig);
 
 @NgModule({
@@ -57,7 +59,13 @@ Amplify.configure(awsconfig);
     NgbModule,
     MDBBootstrapModule.forRoot(),
     AlertModule.forRoot(),
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot({
+      timeOut: 3500,
+      positionClass: 'toast-top-center',
+      preventDuplicates: true,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
