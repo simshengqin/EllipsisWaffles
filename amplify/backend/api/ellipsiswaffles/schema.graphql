@@ -84,4 +84,16 @@ type BusinessProposal @model {
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
 }
+type Stock @model {
+  id: ID!
+  open: Float,
+  high: Float,
+  low: Float,
+  close: Float,
+  adjClose: Float,
+  volume: Float,
+  symbol: String,
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
 

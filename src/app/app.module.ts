@@ -29,6 +29,7 @@ import {AlertModule} from "ngx-bootstrap/alert";
 import {FormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ToastrModule} from "ngx-toastr";
+import { CompanyStocksRecommenderComponent } from './ui/company/company-stocks-recommender/company-stocks-recommender.component';
 Amplify.configure(awsconfig);
 
 @NgModule({
@@ -49,7 +50,8 @@ Amplify.configure(awsconfig);
     CompanyFinancialDashboardComponent,
     CompanyViewLoanComponent,
     CompanyViewLoansComponent,
-    CompanyViewTransactionsComponent
+    CompanyViewTransactionsComponent,
+    CompanyStocksRecommenderComponent
   ],
   imports: [
     BrowserModule,
