@@ -1,19 +1,96 @@
 <div class="user-explore-wrapper">
   <app-header></app-header>
-  <table *ngFor="let company of companies; let i = index" class="table table-striped">
-    <thead>
-    <tr>
-      <th scope="col">Key</th>
-      <th scope="col">Value</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let item of company | keyvalue">
-      <td>{{item.key}}</td>
-      <td>{{item.value}}</td>
-    </tr>
-    </tbody>
-    <br>
-  </table>
+  <div class="container-fluid"> 
+    <img src="https://amplify-ellipsiswaffles-dev-155122-deployment.s3.ap-southeast-1.amazonaws.com/pictures/Laksa-900x532.jpg" style="width:100%;">
+    <div class="middle-right">
+      <div class="welcome-page-title"><h1>Let's explore good food!</h1></div>
+      <div class="input-group rounded">
+        <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search"
+          aria-describedby="search-addon" />
+        <span class="input-group-text border-0" id="search-addon">
+          <i class="fas fa-search"></i>
+        </span>
+      </div>
+    </div>
+  </div>
+  
+  <br><br><br><br>
+  <div class="container">
+    <h1>Hawker Stalls</h1>
+  
+  
+  <div class="card-columns">
+    <div *ngFor="let company of companies; let i = index">
+      <img src="https://amplify-ellipsiswaffles-dev-155122-deployment.s3.ap-southeast-1.amazonaws.com/pictures/HomepageExplore+-+Al-Ahmad+Roti+Prata.jpg" class="card-img-top" width="100">
+      <div class="card-body">
+        <h5 class="card-title">{{company.name}}</h5>
+        <p class="card-text">Address: {{company.address}}<br>Rating: {{company.rating}}</p>
+        <a href="#" class="btn btn-primary">Order Now</a>
+      </div>
+    </div>
+  </div>
+
+  <br><br><br><br>
+  <div class="container">
+    <h1>Meal Subscription</h1>
+  </div>
+  
+  <div class="row row-cols-1 row-cols-md-2 g-4">
+    <div class="col">
+      <div class="card">
+        <img src="https://amplify-ellipsiswaffles-dev-155122-deployment.s3.ap-southeast-1.amazonaws.com/pictures/3+meal.jpg" class="card-img-top" height="300" width="80">
+        <div class="card-body">
+          <h5 class="card-title">3 Meals Plan</h5>
+          <p class="card-text">New to our subscription? Try out our 3 meals prepared just for you.</p>
+          <a href="#" class="btn btn-primary">Order Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="https://amplify-ellipsiswaffles-dev-155122-deployment.s3.ap-southeast-1.amazonaws.com/pictures/7+meal.jpg" class="card-img-top" height="300" width="80">
+        <div class="card-body">
+          <h5 class="card-title">7 Meals Plan</h5>
+          <p class="card-text">Subscribe to our 1 week plan, extendable to 1 month.</p>
+          <a href="#" class="btn btn-primary">Order Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br><br><br><br>
+  <div class="container">
+    <h1>Food Categories</h1>
+  </div>
+
+  <div class="card-deck">
+    <div class="card">
+      <img class="card-img-top" src="https://amplify-ellipsiswaffles-dev-155122-deployment.s3.ap-southeast-1.amazonaws.com/pictures/Western-Food-Stalls-5-Star-Corner.jpg" alt="Card image cap" height="220" width="60">
+      <div class="card-body">
+        <h5 class="card-title">Western</h5>
+        <p class="card-text">A hearty meal is always guaranteed with some Western food.</p>
+        <a href="#" class="btn btn-primary">Order Now</a>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="https://amplify-ellipsiswaffles-dev-155122-deployment.s3.ap-southeast-1.amazonaws.com/pictures/Sisaket-Thai-Group.jpg" alt="Card image cap" height="220" width="60">
+      <div class="card-body">
+        <h5 class="card-title">Thai</h5>
+        <p class="card-text">Sawasdee ka! Spice up your life with some Thai food.</p>
+        <a href="#" class="btn btn-primary">Order Now</a>
+      </div>
+    </div>
+    <div class="card">
+      <img class="card-img-top" src="https://amplify-ellipsiswaffles-dev-155122-deployment.s3.ap-southeast-1.amazonaws.com/pictures/korean.jpg" alt="Card image cap" height="220" width="60">
+      <div class="card-body">
+        <h5 class="card-title">Korean</h5>
+        <p class="card-text">K-dramas making you hungry? Try out some Korean food now!</p>
+        <a href="#" class="btn btn-primary">Order Now</a>
+      </div>
+    </div>
+  </div>
+
+<br><br><br>
+
 
 </div>
