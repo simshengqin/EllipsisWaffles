@@ -15,6 +15,7 @@ import {CompanyExpansionAnalysisComponent} from "./ui/company/company-expansion-
 import {CompanyAccountSummaryComponent} from "./ui/company/company-account-summary/company-account-summary.component";
 import {CompanyCreateBusinessProposalComponent} from "./ui/company/company-create-business-proposal/company-create-business-proposal.component";
 import {UserHomeComponent} from "./ui/user/user-home/user-home.component";
+import {CompanyStocksRecommenderComponent} from "./ui/company/company-stocks-recommender/company-stocks-recommender.component";
 
 const routes: Routes = [{
   path: '',
@@ -90,10 +91,16 @@ const routes: Routes = [{
       component: CompanyCreateBusinessProposalComponent
     },
     {
+      path: 'company/stocks-recommender', // 'else'
+      pathMatch: 'full',
+      component: CompanyStocksRecommenderComponent
+    },
+    {
       path: 'company/create-product', // 'else'
       pathMatch: 'full',
       component: CompanyCreateProductComponent
     },
+
 
 
     {
