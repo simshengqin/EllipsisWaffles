@@ -11,28 +11,46 @@
   <!-- Collapsible content -->
   <links>
 
-    <!-- Links -->
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item" [ngClass]="{'active': url == '/view-transactions'}">
-        <a class="nav-link waves-light" routerLink="/view-transactions" mdbWavesEffect>View Transactions<span class="sr-only">(current)</span></a>
+    <!-- User -->
+    <ul class="navbar-nav mr-auto" *ngIf="role == 'user'">
+      <li class="nav-item" [ngClass]="{'active': url == '/user/home'}">
+        <a class="nav-link waves-light" routerLink="/user/home" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item" [ngClass]="{'active': url == '/financial-dashboard'}">
-        <a class="nav-link waves-light" routerLink="/financial-dashboard" mdbWavesEffect>Financial Dashboard</a>
+      <li class="nav-item" [ngClass]="{'active': url == '/user/explore'}">
+        <a class="nav-link waves-light" routerLink="/user/explore" mdbWavesEffect>Explore</a>
       </li>
-      <li class="nav-item" [ngClass]="{'active': url == '/expansion-analysis'}">
-        <a class="nav-link waves-light" routerLink="/expansion-analysis" mdbWavesEffect>Expansion Analysis</a>
+      <li class="nav-item" [ngClass]="{'active': url == '/user/meal-subscription'}">
+        <a class="nav-link waves-light" routerLink="/user/meal-subscription" mdbWavesEffect>Meal subscription</a>
       </li>
-      <li class="nav-item" [ngClass]="{'active': url == '/account-summary'}">
-        <a class="nav-link waves-light" routerLink="/account-summary" mdbWavesEffect>Account Summary</a>
+      <li class="nav-item" [ngClass]="{'active': url == '/user/view-transactions'}">
+        <a class="nav-link waves-light" routerLink="/user/view-transactions" mdbWavesEffect>View Transactions</a>
       </li>
-      <li class="nav-item" [ngClass]="{'active': url == '/view-loans'}">
-        <a class="nav-link waves-light" routerLink="/view-loans" mdbWavesEffect>View Loans</a>
+      <li class="nav-item" [ngClass]="{'active': url == ''}">
+        <a class="nav-link waves-light" routerLink="" mdbWavesEffect>Contact Us</a>
       </li>
-      <li class="nav-item" [ngClass]="{'active': url == '/create-loan'}">
-      <a class="nav-link waves-light" routerLink="/create-loans" mdbWavesEffect>Create Loans</a>
+
+    </ul>
+
+    <ul class="navbar-nav mr-auto" *ngIf="role == 'company'">
+      <li class="nav-item" [ngClass]="{'active': url == '/company/view-transactions'}">
+        <a class="nav-link waves-light" routerLink="/company/view-transactions" mdbWavesEffect>View Transactions<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item" [ngClass]="{'active': url == '/company/financial-dashboard'}">
+        <a class="nav-link waves-light" routerLink="/company/financial-dashboard" mdbWavesEffect>Financial Dashboard</a>
+      </li>
+      <li class="nav-item" [ngClass]="{'active': url == '/company/expansion-analysis'}">
+        <a class="nav-link waves-light" routerLink="/company/expansion-analysis" mdbWavesEffect>Expansion Analysis</a>
+      </li>
+      <li class="nav-item" [ngClass]="{'active': url == '/company/account-summary'}">
+        <a class="nav-link waves-light" routerLink="/company/account-summary" mdbWavesEffect>Account Summary</a>
+      </li>
+      <li class="nav-item" [ngClass]="{'active': url == '/company/view-loans'}">
+        <a class="nav-link waves-light" routerLink="/company/view-loans" mdbWavesEffect>View Loans</a>
+      </li>
+      <li class="nav-item" [ngClass]="{'active': url == '/company/create-loan'}">
+        <a class="nav-link waves-light" routerLink="/company/create-loan" mdbWavesEffect>Create Loan</a>
       </li>
     </ul>
-    <!-- Links -->
 
     <ul class="navbar-nav ml-auto nav-flex-icons">
 
