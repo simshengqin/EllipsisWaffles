@@ -9,7 +9,6 @@ import { UserExploreComponent } from './ui/user/user-explore/user-explore.compon
 import {HeaderComponent} from "./shared/components/header/header.component";
 import {Amplify} from "aws-amplify";
 import awsconfig from '../aws-exports';
-import { UserViewCompaniesComponent } from './ui/user/user-view-companies/user-view-companies.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {UserViewCompanyComponent} from "./ui/user/user-view-company/user-view-company.component";
 import {UserCheckoutComponent} from "./ui/user/user-checkout/user-checkout.component";
@@ -17,8 +16,12 @@ import {UserViewTransactionsComponent} from "./ui/user/user-view-transactions/us
 import {CompanyCreateLoanComponent} from "./ui/company/company-create-loan/company-create-loan.component";
 import {CompanyCreateProductComponent} from "./ui/company/company-create-product/company-create-product.component";
 import {CompanyViewLoansComponent} from "./ui/company/company-view-loans/company-view-loans.component";
-import {CompanyViewTransactionsComponent} from "./ui/company/company-orders/company-view-transactions.component";
-import {CompanyHomeComponent} from "./ui/company/company-home/company-home.component";
+import {CompanyViewTransactionsComponent} from "./ui/company/company-view-transactions/company-view-transactions.component";
+import {CompanyViewLoanComponent} from "./ui/company/company-view-loan/company-view-loan.component";
+import {CompanyAccountSummaryComponent} from "./ui/company/company-account-summary/company-account-summary.component";
+import {CompanyCreateBusinessProposalComponent} from "./ui/company/company-create-business-proposal/company-create-business-proposal.component";
+import {CompanyExpansionAnalysisComponent} from "./ui/company/company-expansion-analysis/company-expansion-analysis.component";
+import {CompanyFinancialDashboardComponent} from "./ui/company/company-financial-dashboard/company-financial-dashboard.component";
 Amplify.configure(awsconfig);
 
 @NgModule({
@@ -26,13 +29,16 @@ Amplify.configure(awsconfig);
     AppComponent,
     HeaderComponent,
     UserExploreComponent,
-    UserViewCompaniesComponent,
     UserViewCompanyComponent,
     UserCheckoutComponent,
     UserViewTransactionsComponent,
-    CompanyHomeComponent,
+    CompanyAccountSummaryComponent,
+    CompanyCreateBusinessProposalComponent,
     CompanyCreateLoanComponent,
     CompanyCreateProductComponent,
+    CompanyExpansionAnalysisComponent,
+    CompanyFinancialDashboardComponent,
+    CompanyViewLoanComponent,
     CompanyViewLoansComponent,
     CompanyViewTransactionsComponent
   ],
