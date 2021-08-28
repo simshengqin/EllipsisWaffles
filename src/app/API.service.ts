@@ -111,6 +111,7 @@ export type CreateCompanyInput = {
   type?: string | null;
   latitude?: number | null;
   longitude?: number | null;
+  image_url?: string | null;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -122,6 +123,7 @@ export type ModelCompanyConditionInput = {
   type?: ModelStringInput | null;
   latitude?: ModelFloatInput | null;
   longitude?: ModelFloatInput | null;
+  image_url?: ModelStringInput | null;
   createdAt?: ModelStringInput | null;
   updatedAt?: ModelStringInput | null;
   and?: Array<ModelCompanyConditionInput | null> | null;
@@ -150,6 +152,7 @@ export type Company = {
   type?: string | null;
   latitude?: number | null;
   longitude?: number | null;
+  image_url?: string | null;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -162,6 +165,7 @@ export type UpdateCompanyInput = {
   type?: string | null;
   latitude?: number | null;
   longitude?: number | null;
+  image_url?: string | null;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -473,6 +477,69 @@ export type DeleteBusinessProposalInput = {
   id: string;
 };
 
+export type CreateStockInput = {
+  id?: string | null;
+  date?: string | null;
+  open?: number | null;
+  high?: number | null;
+  low?: number | null;
+  close?: number | null;
+  adjClose?: number | null;
+  volume?: number | null;
+  symbol?: string | null;
+  createdAt?: string | null;
+  updatedAt?: string | null;
+};
+
+export type ModelStockConditionInput = {
+  date?: ModelStringInput | null;
+  open?: ModelFloatInput | null;
+  high?: ModelFloatInput | null;
+  low?: ModelFloatInput | null;
+  close?: ModelFloatInput | null;
+  adjClose?: ModelFloatInput | null;
+  volume?: ModelFloatInput | null;
+  symbol?: ModelStringInput | null;
+  createdAt?: ModelStringInput | null;
+  updatedAt?: ModelStringInput | null;
+  and?: Array<ModelStockConditionInput | null> | null;
+  or?: Array<ModelStockConditionInput | null> | null;
+  not?: ModelStockConditionInput | null;
+};
+
+export type Stock = {
+  __typename: "Stock";
+  id: string;
+  date?: string | null;
+  open?: number | null;
+  high?: number | null;
+  low?: number | null;
+  close?: number | null;
+  adjClose?: number | null;
+  volume?: number | null;
+  symbol?: string | null;
+  createdAt?: string | null;
+  updatedAt?: string | null;
+};
+
+export type UpdateStockInput = {
+  id: string;
+  date?: string | null;
+  open?: number | null;
+  high?: number | null;
+  low?: number | null;
+  close?: number | null;
+  adjClose?: number | null;
+  volume?: number | null;
+  symbol?: string | null;
+  createdAt?: string | null;
+  updatedAt?: string | null;
+};
+
+export type DeleteStockInput = {
+  id: string;
+};
+
 export type ModelUserFilterInput = {
   id?: ModelIDInput | null;
   username?: ModelStringInput | null;
@@ -515,6 +582,7 @@ export type ModelCompanyFilterInput = {
   type?: ModelStringInput | null;
   latitude?: ModelFloatInput | null;
   longitude?: ModelFloatInput | null;
+  image_url?: ModelStringInput | null;
   createdAt?: ModelStringInput | null;
   updatedAt?: ModelStringInput | null;
   and?: Array<ModelCompanyFilterInput | null> | null;
@@ -640,6 +708,29 @@ export type ModelBusinessProposalConnection = {
   nextToken?: string | null;
 };
 
+export type ModelStockFilterInput = {
+  id?: ModelIDInput | null;
+  date?: ModelStringInput | null;
+  open?: ModelFloatInput | null;
+  high?: ModelFloatInput | null;
+  low?: ModelFloatInput | null;
+  close?: ModelFloatInput | null;
+  adjClose?: ModelFloatInput | null;
+  volume?: ModelFloatInput | null;
+  symbol?: ModelStringInput | null;
+  createdAt?: ModelStringInput | null;
+  updatedAt?: ModelStringInput | null;
+  and?: Array<ModelStockFilterInput | null> | null;
+  or?: Array<ModelStockFilterInput | null> | null;
+  not?: ModelStockFilterInput | null;
+};
+
+export type ModelStockConnection = {
+  __typename: "ModelStockConnection";
+  items?: Array<Stock | null> | null;
+  nextToken?: string | null;
+};
+
 export type CreateUserMutation = {
   __typename: "User";
   id: string;
@@ -679,6 +770,7 @@ export type CreateCompanyMutation = {
   type?: string | null;
   latitude?: number | null;
   longitude?: number | null;
+  image_url?: string | null;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -692,6 +784,7 @@ export type UpdateCompanyMutation = {
   type?: string | null;
   latitude?: number | null;
   longitude?: number | null;
+  image_url?: string | null;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -705,6 +798,7 @@ export type DeleteCompanyMutation = {
   type?: string | null;
   latitude?: number | null;
   longitude?: number | null;
+  image_url?: string | null;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -925,6 +1019,51 @@ export type DeleteBusinessProposalMutation = {
   updatedAt?: string | null;
 };
 
+export type CreateStockMutation = {
+  __typename: "Stock";
+  id: string;
+  date?: string | null;
+  open?: number | null;
+  high?: number | null;
+  low?: number | null;
+  close?: number | null;
+  adjClose?: number | null;
+  volume?: number | null;
+  symbol?: string | null;
+  createdAt?: string | null;
+  updatedAt?: string | null;
+};
+
+export type UpdateStockMutation = {
+  __typename: "Stock";
+  id: string;
+  date?: string | null;
+  open?: number | null;
+  high?: number | null;
+  low?: number | null;
+  close?: number | null;
+  adjClose?: number | null;
+  volume?: number | null;
+  symbol?: string | null;
+  createdAt?: string | null;
+  updatedAt?: string | null;
+};
+
+export type DeleteStockMutation = {
+  __typename: "Stock";
+  id: string;
+  date?: string | null;
+  open?: number | null;
+  high?: number | null;
+  low?: number | null;
+  close?: number | null;
+  adjClose?: number | null;
+  volume?: number | null;
+  symbol?: string | null;
+  createdAt?: string | null;
+  updatedAt?: string | null;
+};
+
 export type GetUserQuery = {
   __typename: "User";
   id: string;
@@ -958,6 +1097,7 @@ export type GetCompanyQuery = {
   type?: string | null;
   latitude?: number | null;
   longitude?: number | null;
+  image_url?: string | null;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -973,6 +1113,7 @@ export type ListCompaniesQuery = {
     type?: string | null;
     latitude?: number | null;
     longitude?: number | null;
+    image_url?: string | null;
     createdAt?: string | null;
     updatedAt?: string | null;
   } | null> | null;
@@ -1143,6 +1284,40 @@ export type ListBusinessProposalsQuery = {
   nextToken?: string | null;
 };
 
+export type GetStockQuery = {
+  __typename: "Stock";
+  id: string;
+  date?: string | null;
+  open?: number | null;
+  high?: number | null;
+  low?: number | null;
+  close?: number | null;
+  adjClose?: number | null;
+  volume?: number | null;
+  symbol?: string | null;
+  createdAt?: string | null;
+  updatedAt?: string | null;
+};
+
+export type ListStocksQuery = {
+  __typename: "ModelStockConnection";
+  items?: Array<{
+    __typename: "Stock";
+    id: string;
+    date?: string | null;
+    open?: number | null;
+    high?: number | null;
+    low?: number | null;
+    close?: number | null;
+    adjClose?: number | null;
+    volume?: number | null;
+    symbol?: string | null;
+    createdAt?: string | null;
+    updatedAt?: string | null;
+  } | null> | null;
+  nextToken?: string | null;
+};
+
 export type OnCreateUserSubscription = {
   __typename: "User";
   id: string;
@@ -1182,6 +1357,7 @@ export type OnCreateCompanySubscription = {
   type?: string | null;
   latitude?: number | null;
   longitude?: number | null;
+  image_url?: string | null;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -1195,6 +1371,7 @@ export type OnUpdateCompanySubscription = {
   type?: string | null;
   latitude?: number | null;
   longitude?: number | null;
+  image_url?: string | null;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -1208,6 +1385,7 @@ export type OnDeleteCompanySubscription = {
   type?: string | null;
   latitude?: number | null;
   longitude?: number | null;
+  image_url?: string | null;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -1428,6 +1606,51 @@ export type OnDeleteBusinessProposalSubscription = {
   updatedAt?: string | null;
 };
 
+export type OnCreateStockSubscription = {
+  __typename: "Stock";
+  id: string;
+  date?: string | null;
+  open?: number | null;
+  high?: number | null;
+  low?: number | null;
+  close?: number | null;
+  adjClose?: number | null;
+  volume?: number | null;
+  symbol?: string | null;
+  createdAt?: string | null;
+  updatedAt?: string | null;
+};
+
+export type OnUpdateStockSubscription = {
+  __typename: "Stock";
+  id: string;
+  date?: string | null;
+  open?: number | null;
+  high?: number | null;
+  low?: number | null;
+  close?: number | null;
+  adjClose?: number | null;
+  volume?: number | null;
+  symbol?: string | null;
+  createdAt?: string | null;
+  updatedAt?: string | null;
+};
+
+export type OnDeleteStockSubscription = {
+  __typename: "Stock";
+  id: string;
+  date?: string | null;
+  open?: number | null;
+  high?: number | null;
+  low?: number | null;
+  close?: number | null;
+  adjClose?: number | null;
+  volume?: number | null;
+  symbol?: string | null;
+  createdAt?: string | null;
+  updatedAt?: string | null;
+};
+
 @Injectable({
   providedIn: "root"
 })
@@ -1524,6 +1747,7 @@ export class APIService {
           type
           latitude
           longitude
+          image_url
           createdAt
           updatedAt
         }
@@ -1553,6 +1777,7 @@ export class APIService {
           type
           latitude
           longitude
+          image_url
           createdAt
           updatedAt
         }
@@ -1582,6 +1807,7 @@ export class APIService {
           type
           latitude
           longitude
+          image_url
           createdAt
           updatedAt
         }
@@ -2053,6 +2279,99 @@ export class APIService {
     )) as any;
     return <DeleteBusinessProposalMutation>response.data.deleteBusinessProposal;
   }
+  async CreateStock(
+    input: CreateStockInput,
+    condition?: ModelStockConditionInput
+  ): Promise<CreateStockMutation> {
+    const statement = `mutation CreateStock($input: CreateStockInput!, $condition: ModelStockConditionInput) {
+        createStock(input: $input, condition: $condition) {
+          __typename
+          id
+          date
+          open
+          high
+          low
+          close
+          adjClose
+          volume
+          symbol
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <CreateStockMutation>response.data.createStock;
+  }
+  async UpdateStock(
+    input: UpdateStockInput,
+    condition?: ModelStockConditionInput
+  ): Promise<UpdateStockMutation> {
+    const statement = `mutation UpdateStock($input: UpdateStockInput!, $condition: ModelStockConditionInput) {
+        updateStock(input: $input, condition: $condition) {
+          __typename
+          id
+          date
+          open
+          high
+          low
+          close
+          adjClose
+          volume
+          symbol
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <UpdateStockMutation>response.data.updateStock;
+  }
+  async DeleteStock(
+    input: DeleteStockInput,
+    condition?: ModelStockConditionInput
+  ): Promise<DeleteStockMutation> {
+    const statement = `mutation DeleteStock($input: DeleteStockInput!, $condition: ModelStockConditionInput) {
+        deleteStock(input: $input, condition: $condition) {
+          __typename
+          id
+          date
+          open
+          high
+          low
+          close
+          adjClose
+          volume
+          symbol
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <DeleteStockMutation>response.data.deleteStock;
+  }
   async GetUser(id: string): Promise<GetUserQuery> {
     const statement = `query GetUser($id: ID!) {
         getUser(id: $id) {
@@ -2119,6 +2438,7 @@ export class APIService {
           type
           latitude
           longitude
+          image_url
           createdAt
           updatedAt
         }
@@ -2148,6 +2468,7 @@ export class APIService {
             type
             latitude
             longitude
+            image_url
             createdAt
             updatedAt
           }
@@ -2488,6 +2809,71 @@ export class APIService {
     )) as any;
     return <ListBusinessProposalsQuery>response.data.listBusinessProposals;
   }
+  async GetStock(id: string): Promise<GetStockQuery> {
+    const statement = `query GetStock($id: ID!) {
+        getStock(id: $id) {
+          __typename
+          id
+          date
+          open
+          high
+          low
+          close
+          adjClose
+          volume
+          symbol
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      id
+    };
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <GetStockQuery>response.data.getStock;
+  }
+  async ListStocks(
+    filter?: ModelStockFilterInput,
+    limit?: number,
+    nextToken?: string
+  ): Promise<ListStocksQuery> {
+    const statement = `query ListStocks($filter: ModelStockFilterInput, $limit: Int, $nextToken: String) {
+        listStocks(filter: $filter, limit: $limit, nextToken: $nextToken) {
+          __typename
+          items {
+            __typename
+            id
+            date
+            open
+            high
+            low
+            close
+            adjClose
+            volume
+            symbol
+            createdAt
+            updatedAt
+          }
+          nextToken
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    if (limit) {
+      gqlAPIServiceArguments.limit = limit;
+    }
+    if (nextToken) {
+      gqlAPIServiceArguments.nextToken = nextToken;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <ListStocksQuery>response.data.listStocks;
+  }
   OnCreateUserListener: Observable<
     SubscriptionResponse<OnCreateUserSubscription>
   > = API.graphql(
@@ -2556,6 +2942,7 @@ export class APIService {
           type
           latitude
           longitude
+          image_url
           createdAt
           updatedAt
         }
@@ -2577,6 +2964,7 @@ export class APIService {
           type
           latitude
           longitude
+          image_url
           createdAt
           updatedAt
         }
@@ -2598,6 +2986,7 @@ export class APIService {
           type
           latitude
           longitude
+          image_url
           createdAt
           updatedAt
         }
@@ -2940,4 +3329,73 @@ export class APIService {
       }`
     )
   ) as Observable<SubscriptionResponse<OnDeleteBusinessProposalSubscription>>;
+
+  OnCreateStockListener: Observable<
+    SubscriptionResponse<OnCreateStockSubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnCreateStock {
+        onCreateStock {
+          __typename
+          id
+          date
+          open
+          high
+          low
+          close
+          adjClose
+          volume
+          symbol
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<SubscriptionResponse<OnCreateStockSubscription>>;
+
+  OnUpdateStockListener: Observable<
+    SubscriptionResponse<OnUpdateStockSubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnUpdateStock {
+        onUpdateStock {
+          __typename
+          id
+          date
+          open
+          high
+          low
+          close
+          adjClose
+          volume
+          symbol
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<SubscriptionResponse<OnUpdateStockSubscription>>;
+
+  OnDeleteStockListener: Observable<
+    SubscriptionResponse<OnDeleteStockSubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnDeleteStock {
+        onDeleteStock {
+          __typename
+          id
+          date
+          open
+          high
+          low
+          close
+          adjClose
+          volume
+          symbol
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<SubscriptionResponse<OnDeleteStockSubscription>>;
 }

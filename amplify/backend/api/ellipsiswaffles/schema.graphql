@@ -14,7 +14,8 @@ type Company @model {
   rating: Float
   type: String
   latitude: Float
-  longitude: Float
+  longitude: Float,
+  image_url: String
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
 }
@@ -85,7 +86,8 @@ type BusinessProposal @model {
   updatedAt: AWSDateTime
 }
 type Stock @model {
-  id: ID!
+  id: ID!,
+  date: String,
   open: Float,
   high: Float,
   low: Float,

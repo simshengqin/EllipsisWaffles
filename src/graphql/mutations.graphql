@@ -50,6 +50,7 @@ mutation CreateCompany(
     type
     latitude
     longitude
+    image_url
     createdAt
     updatedAt
   }
@@ -66,6 +67,7 @@ mutation UpdateCompany(
     type
     latitude
     longitude
+    image_url
     createdAt
     updatedAt
   }
@@ -82,6 +84,7 @@ mutation DeleteCompany(
     type
     latitude
     longitude
+    image_url
     createdAt
     updatedAt
   }
@@ -343,6 +346,60 @@ mutation DeleteBusinessProposal(
     other_capital
     cash_on_hand
     other_liablities
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateStock(
+  $input: CreateStockInput!
+  $condition: ModelStockConditionInput
+) {
+  createStock(input: $input, condition: $condition) {
+    id
+    date
+    open
+    high
+    low
+    close
+    adjClose
+    volume
+    symbol
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateStock(
+  $input: UpdateStockInput!
+  $condition: ModelStockConditionInput
+) {
+  updateStock(input: $input, condition: $condition) {
+    id
+    date
+    open
+    high
+    low
+    close
+    adjClose
+    volume
+    symbol
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteStock(
+  $input: DeleteStockInput!
+  $condition: ModelStockConditionInput
+) {
+  deleteStock(input: $input, condition: $condition) {
+    id
+    date
+    open
+    high
+    low
+    close
+    adjClose
+    volume
+    symbol
     createdAt
     updatedAt
   }
