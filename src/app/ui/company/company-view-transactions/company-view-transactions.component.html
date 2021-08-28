@@ -1,20 +1,69 @@
 <div class="company-view-transactions-wrapper">
   <app-header></app-header>
-  <!-- 
-  <table *ngFor="let transaction of transactions; let i = index" class="table table-striped">
-    <thead>
-    <tr>
-      <th scope="col">Key</th>
-      <th scope="col">Value</th>
-    </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of transaction | keyvalue">
-        <td>{{item.key}}</td>
-        <td>{{item.value}}</td>
-      </tr>
-    </tbody>
+  <br>
+  <div class="container">
+    <h1> View Transactions </h1>
     <br>
-  </table>
-  -->
+    <!-- BOOTSTRAP CARDS -->
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="col" *ngFor="let transaction of transactions; let i = index">
+        <div class="card">
+          <!-- <img src="..." class="card-img-top" alt="..."> -->
+          <div class="card-body">
+            <!-- <h5 class="card-title"> </h5> --> 
+            <div class="row show-grid"> <div class="col-md-12"> <p><b> Order ID: </b>{{transaction['id']}}</p> </div> </div>
+            <div class="row show-grid"> 
+              <div class="col-md-4"> <p><b> Pick Up Time: </b> {{time}} </p> </div>
+              <div class="col-md-4"> <p> <b> Status: </b> {{transaction['status']}}</p> </div>
+              <div class="col-md-4">  
+                <button type="button" class="btn btn-success" (click)="changeStatus(transaction['id'])">Mark as Ready </button> 
+                <br><br> 
+                <button type="button" class="btn btn-warning" (click)="changeStatus(transaction['id'])">Cancel Order</button> 
+              </div>
+            </div>
+            <div class="row show-grid"> 
+              <div class="col-md-12"> <p><b> Order Details: </b></p> <p> 1.) {{transaction['product_name']}} - $SGD {{transaction['price']}}</p></div>
+            </div>
+            <div class="row show-grid"> 
+              <div class="col-md-7"> <p><b> Total: </b></p> </div>
+              <div class="col-md-5"> <p> $SGD {{transaction['price']}} </p></div>
+            </div>
+            <hr class="solid">
+            <div class="row show-grid">
+              <div class="col-md-6"> <button type="button" class="btn btn-info"> Get Help</button> </div>
+              <div class="col-md-6"> <button type="button" class="btn btn-info"> Contact Customer </button> </div>
+            </div>
+          </div> <!-- End of card body -->
+        </div>
+        <br>
+      </div>
+    </div>
+    <!-- BOOTSTRAP CARDS -->
+    <br> 
+    <h1> Summary </h1>
+    <br>
+
+    <div class="row show-grid">
+
+      <div class="col-md-3"> 
+        <div class="card" style="width: 18rem">
+          <div class="card-body bg-warning ">
+            <h5 class="card-title"> Orders Completed </h5>
+            <h6 class="card-subtitle mb-2 text-muted"> 27 </h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-1"></div>
+      <div class="col-md-3"> 
+        <div class="card" style="width: 18rem;">
+          <div class="card-body bg-warning ">
+            <h5 class="card-title"> Orders Cancled </h5>
+            <h6 class="card-subtitle mb-2 text-muted"> 3 </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  <br>
 </div>
