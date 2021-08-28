@@ -366,8 +366,8 @@ export type ModelLoanConditionInput = {
 };
 
 export type Loan = {
-  __typename: "Loan";
-  id: string;
+  __typename?: "Loan";
+  id?: string;
   company_name?: string | null;
   company_address?: string | null;
   company_number?: number | null;
@@ -445,8 +445,8 @@ export type ModelBusinessProposalConditionInput = {
 };
 
 export type BusinessProposal = {
-  __typename: "BusinessProposal";
-  id: string;
+  __typename?: "BusinessProposal";
+  id?: string;
   monthly_revenue?: number | null;
   monthly_expense?: number | null;
   monthly_profit?: number | null;
