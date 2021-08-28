@@ -1,0 +1,22 @@
+.alert {
+    margin-bottom: 1px;
+    height: 30px;
+    line-height:30px;
+    padding:0px 15px;
+  }
+.notification-bell {
+  margin-top: 8px;
+
+}
+.badge {
+  position: absolute;
+  font-size: .6rem;
+  margin-top: -.4rem;
+  margin-left: -.4rem;
+  padding: .2em .45em;
+}
+.view-report:hover {
+    cursor: pointer;
+    color: #FD6642;
+  }
+/* .main is class, #main is ID */
