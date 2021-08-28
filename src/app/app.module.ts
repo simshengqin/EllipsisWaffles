@@ -22,16 +22,21 @@ import {CompanyAccountSummaryComponent} from "./ui/company/company-account-summa
 import {CompanyCreateBusinessProposalComponent} from "./ui/company/company-create-business-proposal/company-create-business-proposal.component";
 import {CompanyExpansionAnalysisComponent} from "./ui/company/company-expansion-analysis/company-expansion-analysis.component";
 import {CompanyFinancialDashboardComponent} from "./ui/company/company-financial-dashboard/company-financial-dashboard.component";
+import {CommonModule} from "@angular/common";
+import {UserHomeComponent} from "./ui/user/user-home/user-home.component";
+import {UserMealSubscriptionComponent} from "./ui/user/user-meal-subscription/user-meal-subscription.component";
 Amplify.configure(awsconfig);
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    UserHomeComponent,
     UserExploreComponent,
     UserViewCompanyComponent,
     UserCheckoutComponent,
     UserViewTransactionsComponent,
+    UserMealSubscriptionComponent,
     CompanyAccountSummaryComponent,
     CompanyCreateBusinessProposalComponent,
     CompanyCreateLoanComponent,
@@ -44,6 +49,7 @@ Amplify.configure(awsconfig);
   ],
     imports: [
         BrowserModule,
+        CommonModule,
         AppRoutingModule,
         AmplifyUIAngularModule,
         NgbModule,

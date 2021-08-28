@@ -14,6 +14,7 @@ import {CompanyFinancialDashboardComponent} from "./ui/company/company-financial
 import {CompanyExpansionAnalysisComponent} from "./ui/company/company-expansion-analysis/company-expansion-analysis.component";
 import {CompanyAccountSummaryComponent} from "./ui/company/company-account-summary/company-account-summary.component";
 import {CompanyCreateBusinessProposalComponent} from "./ui/company/company-create-business-proposal/company-create-business-proposal.component";
+import {UserHomeComponent} from "./ui/user/user-home/user-home.component";
 
 const routes: Routes = [{
   path: '',
@@ -22,6 +23,11 @@ const routes: Routes = [{
       path: 'user/checkout', // 'else'
       pathMatch: 'full',
       component: UserCheckoutComponent
+    },
+    {
+      path: 'user/home', // 'else'
+      pathMatch: 'full',
+      component: UserHomeComponent
     },
     {
       path: 'user/explore', // 'else'

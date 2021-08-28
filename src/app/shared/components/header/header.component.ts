@@ -13,12 +13,14 @@ import {APIService} from "../../../API.service";
 export class HeaderComponent implements OnInit {
   url: string; // name of file
   username: string;
+  role: string;
   // newTasks: Array<Task> = [];
   constructor(private router: Router, private api: APIService) { }
 
   ngOnInit(): void {
     this.url = this.router.url;
     this.username = localStorage.getItem('username'); // get cookies
+    this.role = localStorage.getItem('role'); // get cookies
     this.getNewTasks();
   } // ngOnInit --> run when components start
   async handleSignOutButtonClick() {
