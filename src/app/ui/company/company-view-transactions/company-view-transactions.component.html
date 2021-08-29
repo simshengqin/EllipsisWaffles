@@ -12,13 +12,13 @@
           <div class="card-body">
             <!-- <h5 class="card-title"> </h5> -->
             <div class="row show-grid"> <div class="col-md-12"> <p><b> Order ID: </b>{{transaction['id']}}</p> </div> </div>
-            <div class="row show-grid">
+            <div class="row show-grid minh">
               <div class="col-md-4"> <p><b> Pick Up Time: </b> {{time}} </p> </div>
-              <div class="col-md-4"> <p> <b> Status: </b> {{transaction['status']}}</p> </div>
+              <div class="col-md-4"> <p> <b> Status: </b> {{transaction['status'] | titlecase}}</p> </div>
               <div class="col-md-4">
-                <button type="button" class="btn btn-success" (click)="changeStatus(transaction['id'])">Mark as Ready </button>
+                <button *ngIf="transaction.status == 'preparing'" type="button" class="btn btn-success" (click)="markAsReady(transaction)">Mark as Ready </button>
                 <br><br>
-                <button type="button" class="btn btn-warning" (click)="changeStatus(transaction['id'])">Cancel Order</button>
+                <button *ngIf="transaction.status == 'preparing'" type="button" class="btn btn-warning" (click)="rejectOrder(transaction)">Reject Order</button>
               </div>
             </div>
             <div class="row show-grid">

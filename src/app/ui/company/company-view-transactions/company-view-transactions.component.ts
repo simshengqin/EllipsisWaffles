@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {APIService, Company, Transaction} from "../../../API.service";
+import {APIService, Company, Transaction, UpdateTransactionInput} from "../../../API.service";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-company-view-transactions',
@@ -7,11 +8,12 @@ import {APIService, Company, Transaction} from "../../../API.service";
   styleUrls: ['./company-view-transactions.component.scss']
 })
 export class CompanyViewTransactionsComponent implements OnInit {
-  
+
   time!:string;
   transactions: Transaction[] = [];
   constructor(
     private api: APIService,
+    private toastrService: ToastrService,
   ) { }
 
   ngOnInit(): void {
@@ -51,9 +53,23 @@ export class CompanyViewTransactionsComponent implements OnInit {
     });
   }
 
-  changeStatus(data:string):void{
-    console.log("Change! ID: " + data)
+  async markAsReady(transaction: Transaction): Promise<void> {
+    const updateTransactionInput: UpdateTransactionInput = {
+      id: transaction.id,
+      status: 'prepared'
+    };
+    await this.api.UpdateTransaction(updateTransactionInput);
+    this.loadTransactions();
+    this.toastrService.success('Successfully confirmed order as ready!');
   }
-
+  async rejectOrder(transaction: Transaction): Promise<void> {
+    const updateTransactionInput: UpdateTransactionInput = {
+      id: transaction.id,
+      status: 'rejected'
+    };
+    await this.api.UpdateTransaction(updateTransactionInput);
+    this.loadTransactions();
+    this.toastrService.success('Successfully rejected order!');
+  }
 }
 
