@@ -3,7 +3,7 @@
   <br>
   <div class="container">
     <h1> Expansion Analysis </h1>
-    <br> 
+    <br>
 
     <div class="justify-content-center">
       <h3 > Top 3 popular Hawker </h3>
@@ -38,8 +38,8 @@
 
     <hr class="solid">
 
-    <h1> Google Map </h1>
-
+    <h1> Company's Location </h1>
+    <br>
     <div *ngIf="viewCompany1">
       <div class="align-items-center">
         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.742505053485!2d103.79274061475395!3d1.3305759990295483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da109edd76d13f%3A0xab961777c1d795a9!2s6th%20Avenue%20Wanton%20Mee!5e0!3m2!1sen!2ssg!4v1630218287049!5m2!1sen!2ssg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
@@ -58,12 +58,13 @@
       </div>
     </div>
     <hr class="solid">
-
+    <h1> Traffic Flow </h1>
+    <br>
     <!-- COMPANY 1 -->
     <div *ngIf="viewCompany1">
         <div class="row show-grid">
           <!-- dropdown -->
-          <div class="col-md-12"> 
+          <div class="col-md-12">
             <div class="btn-group" mdbDropdown>
               <button type="button" mdbBtn color="danger" class="waves-light" mdbWavesEffect> Select Year </button>
               <button type="button" mdbDropdownToggle mdbBtn color="danger" class="dropdown-toggle dropdown-toggle-split px-3 waves-light"
@@ -75,20 +76,20 @@
             </div>
           </div>
           <!-- Chart -->
-          <div class="col-md-12"> 
+          <div class="col-md-12">
             <div style="display: block">
               <canvas mdbChart [chartType]="chartType_com1" [datasets]="chartDatasets_com1" [labels]="chartLabels_com1" [colors]="chartColors_com1" [options]="chartOptions_com1" [legend]="true"></canvas>
-            </div> 
+            </div>
           </div>
         </div>
-      
+
     </div>
     <!-- END OF COMPANY 1 -->
     <!-- COMPANY 2 -->
     <div *ngIf="viewCompany2">
       <div class="row show-grid">
         <!-- dropdown -->
-        <div class="col-md-12"> 
+        <div class="col-md-12">
           <div class="btn-group" mdbDropdown>
             <button type="button" mdbBtn color="primary" class="waves-light" mdbWavesEffect> Select Year </button>
             <button type="button" mdbDropdownToggle mdbBtn color="primary" class="dropdown-toggle dropdown-toggle-split px-3 waves-light"
@@ -100,10 +101,10 @@
           </div>
         </div>
         <!-- Chart -->
-        <div class="col-md-12"> 
+        <div class="col-md-12">
           <div style="display: block">
             <canvas mdbChart [chartType]="chartType_com2" [datasets]="chartDatasets_com2" [labels]="chartLabels_com2" [colors]="chartColors_com2" [options]="chartOptions_com2" [legend]="true"></canvas>
-          </div> 
+          </div>
         </div>
       </div>
 
@@ -113,7 +114,7 @@
     <div *ngIf="viewCompany3">
       <div class="row show-grid">
         <!-- dropdown -->
-        <div class="col-md-12"> 
+        <div class="col-md-12">
           <div class="btn-group" mdbDropdown>
             <button type="button" mdbBtn color="secondary" class="waves-light" mdbWavesEffect> Select Year </button>
             <button type="button" mdbDropdownToggle mdbBtn color="secondary" class="dropdown-toggle dropdown-toggle-split px-3 waves-light"
@@ -125,16 +126,16 @@
           </div>
         </div>
         <!-- Chart -->
-        <div class="col-md-12"> 
+        <div class="col-md-12">
           <div style="display: block">
             <canvas mdbChart [chartType]="chartType_com3" [datasets]="chartDatasets_com3" [labels]="chartLabels_com3" [colors]="chartColors_com3" [options]="chartOptions_com3" [legend]="true"></canvas>
-          </div> 
+          </div>
         </div>
       </div>
     </div>
 
   </div>
-  <!-- 
+  <!--
   <table *ngFor="let transaction of transactions; let i = index" class="table table-striped">
     <thead>
     <tr>
