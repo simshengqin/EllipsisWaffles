@@ -1,5 +1,53 @@
 <div class="user-checkout-wrapper">
   <app-header></app-header>
-  user-checkout Check console for info on transaction created!
+  <!-- user-checkout Check console for info on transaction created! -->
+  <br><br><br>
+  <div class="container">
+    <h2>Song Kee Fishball Noodle</h2>
+    <h6><b>Address:</b> 100 Yio Chu Kang Rd, Singapore 545576</h6>
+  </div>
 
+  <br>
+  <div class="container">
+    <hr>
+    <h2>Your Order</h2>
+  <br>
+    <div class="card mb-3" style="max-width: 540px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <img [src]="product.image_url" height="150" width="110">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <p class="card-title">Item(s): 1x {{product.name}}</p>
+            <p class="card-text">Total Price: ${{product.price}}</p>
+            <p>Pick-Up Time: 1.30pm</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <div class="container">
+    <hr>
+    <h4>Select Payment Mode</h4>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDisabled" id="flexRadioDisabled" disabled>
+      <label class="form-check-label" for="flexRadioDisabled">Credit / Debit Card</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+      <label class="form-check-label" for="flexRadioDefault2">Subscription</label>
+    </div>
+    <hr>
+  </div>
+
+  <br>
+  <div class="container">
+    <h4>Summary</h4>
+    <h6><b>Total: </b>$0.00 (subscription claim)</h6>
+    <button (click)="createTransaction()" class="btn btn-outline-primary">Confirm Order</button>
+  </div>
+  <br><br>
 </div>

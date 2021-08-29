@@ -5,49 +5,53 @@
   <div class="container">
     <h2>Meal Subscription</h2>
     <br>
-
+    <h6>Choose your Meal Plan:</h6>
     <div class="form-check">
       <input class="form-check-input" type="radio" name="isThreeMeal" value="true" id="flexRadioDefault1" [(ngModel)]="isThreeMeal">
-      <label class="form-check-label" for="flexRadioDefault1"><h4>3 Meals</h4></label>
+      <label class="form-check-label" for="flexRadioDefault1"><h6>3 Meals</h6></label>
     </div>
     <div class="form-check">
       <input class="form-check-input" type="radio" name="isThreeMeal" value="false" id="flexRadioDefault2"[(ngModel)]="isThreeMeal" checked>
-      <label class="form-check-label" for="flexRadioDefault2"><h4>7 Meals</h4></label>
+      <label class="form-check-label" for="flexRadioDefault2"><h6>7 Meals</h6></label>
     </div>
   
-
-    <br><br>
+    <br>
+    <hr>
     <div class="card-deck">
       <div class="card">
         <img class="card-img-top" src="https://amplify-ellipsiswaffles-dev-155122-deployment.s3.ap-southeast-1.amazonaws.com/pictures/Menu+-+Song+Kee+Fish+Ball+Noodle+-+Dry+Fishball+Noodles.jpg" alt="Card image cap" height="220" width="80">
         <div class="card-body">
           <h5 class="card-title">Song Kee Fish Ball Noodle</h5>
-          <p class="card-text"></p>
-          <a href="#" class="btn btn-primary">Choose a Meal</a>
+          <p class="card-text">Fishball Noodle</p>
+          <p class="card-text">$4.30</p>
+          <a (click) = "createTransaction('Song Kee Fish Ball Noodle', 'Fishball Noodle' , 4.30)" class="btn btn-outline-primary">Confirm Order</a>
         </div>
       </div>
       <div class="card">
         <img class="card-img-top" src="https://amplify-ellipsiswaffles-dev-155122-deployment.s3.ap-southeast-1.amazonaws.com/pictures/HomepageExplore+-+Mizzy+Corner+Nasi+Lemak.jpg" alt="Card image cap" height="220" width="80">
         <div class="card-body">
           <h5 class="card-title">Mizzy Corner Nasi Lemak</h5>
-          <p class="card-text"></p>
-          <a href="#" class="btn btn-primary">Choose a Meal</a>
+          <p class="card-text">Nasi Lemak</p>
+          <p class="card-text">$4.30</p>
+          <a (click) = "createTransaction('Mizzy Corner Nasi Lemak', 'Nasi Lemak' , 4.30)" class="btn btn-outline-primary">Confirm Order</a>
         </div>
       </div>
       <div class="card">
         <img class="card-img-top" src="https://amplify-ellipsiswaffles-dev-155122-deployment.s3.ap-southeast-1.amazonaws.com/pictures/HomepageExplore+-+Al-Ahmad+Roti+Prata.jpg" alt="Card image cap" height="220" width="80">
         <div class="card-body">
           <h5 class="card-title">Al-Ahmad Roti Prata</h5>
-          <p class="card-text"></p>
-          <a href="#" class="btn btn-primary">Choose a Meal</a>
+          <p class="card-text">Prata</p>
+          <p class="card-text">$1.20</p>
+          <a (click) = "createTransaction('Al-Ahmad Roti Prata', 'Prata' , 1.20)" class="btn btn-outline-primary">Confirm Order</a>
         </div>
       </div>
       <div class="card" *ngIf="isThreeMeal == 'false'">
         <img class="card-img-top" src="https://amplify-ellipsiswaffles-dev-155122-deployment.s3.ap-southeast-1.amazonaws.com/pictures/Western-Food-Stalls-5-Star-Corner.jpg" alt="Card image cap" height="220" width="80">
         <div class="card-body">
           <h5 class="card-title">John’s Meat & Grill</h5>
-          <p class="card-text"></p>
-          <a href="#" class="btn btn-primary">Choose a Meal</a>
+          <p class="card-text">Chicken Chop</p>
+          <p class="card-text">$5.60</p>
+          <a (click) = "createTransaction('John’s Meat & Grill', 'Chicken Chop' , 5.60)" class="btn btn-outline-primary">Confirm Order</a>
         </div>
       </div>
     </div>
@@ -59,24 +63,27 @@
         <img class="card-img-top" src="https://amplify-ellipsiswaffles-dev-155122-deployment.s3.ap-southeast-1.amazonaws.com/pictures/Sisaket-Thai-Group.jpg" alt="Card image cap" height="220" width="80">
         <div class="card-body">
           <h5 class="card-title">I am Thai</h5>
-          <p class="card-text"></p>
-          <a href="#" class="btn btn-primary">Choose a Meal</a>
+          <p class="card-text">Green Curry with Rice</p>
+          <p class="card-text">$4.60</p>
+          <a (click) = "createTransaction('I am Thai', 'Green Curry with Rice' , 4.60)" class="btn btn-outline-primary">Confirm Order</a>
         </div>
       </div>
       <div class="card">
         <img class="card-img-top" src="https://amplify-ellipsiswaffles-dev-155122-deployment.s3.ap-southeast-1.amazonaws.com/pictures/korean.jpg" alt="Card image cap" height="220" width="80">
         <div class="card-body">
           <h5 class="card-title">Da Kim Mix</h5>
-          <p class="card-text"></p>
-          <a href="#" class="btn btn-primary">Choose a Meal</a>
+          <p class="card-text">Korean Chicken Barbeque</p>
+          <p class="card-text">$4.80</p>
+          <a (click) = "createTransaction('Da Kim Mix', 'Korean Chicken Barbeque' , 4.80)" class="btn btn-outline-primary">Confirm Order</a>
         </div>
       </div>
       <div class="card">
         <img class="card-img-top" src="https://amplify-ellipsiswaffles-dev-155122-deployment.s3.ap-southeast-1.amazonaws.com/pictures/Japanese-Hawker-Stalls-buta-kin.jpg" alt="Card image cap" height="220" width="80">
         <div class="card-body">
           <h5 class="card-title">Zen Japanese Cuisine</h5>
-          <p class="card-text"></p>
-          <a href="#" class="btn btn-primary">Choose a Meal</a>
+          <p class="card-text">Chashu Ramen</p>
+          <p class="card-text">$5.20</p>
+          <a (click) = "createTransaction('Zen Japanese Cuisine', 'Chashu Ramen' , 5.20)" class="btn btn-outline-primary">Choose a Meal</a>
         </div>
       </div>
       <div class="card">

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import {APIService, Company, Product} from "../../../API.service";
 
 @Component({
@@ -10,6 +11,7 @@ export class UserViewCompanyComponent implements OnInit {
   products: Product[] = [];
   constructor(
     private api: APIService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -21,6 +23,10 @@ export class UserViewCompanyComponent implements OnInit {
       this.products = event.items as Array<Product>;
       console.log(this.products);
     });
+  }
+  redirectToCheckout(productId: string) {
+    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
+      this.router.navigate(['user/checkout'], {queryParams: {id: productId}}));
   }
 
 }
