@@ -22,6 +22,17 @@ export class CompanyViewLoansComponent implements OnInit {
     this.api.ListLoans().then(event => {
       this.loans = event.items as Array<Loan>;
       console.log(this.loans);
+      this.loans = this.loans.sort((obj1, obj2) => {
+        if (obj1.createdAt < obj2.createdAt) {
+          return 1;
+        }
+
+        if (obj1.createdAt > obj2.createdAt) {
+          return -1;
+        }
+
+        return 0;
+      });
     });
   }
 

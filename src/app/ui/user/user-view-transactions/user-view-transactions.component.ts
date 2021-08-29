@@ -22,6 +22,17 @@ export class UserViewTransactionsComponent implements OnInit {
     this.api.ListTransactions().then(event => {
       this.transactions = event.items as Array<Transaction>;
       console.log(this.transactions);
+      this.transactions = this.transactions.sort((obj1, obj2) => {
+        if (obj1.createdAt < obj2.createdAt) {
+          return 1;
+        }
+
+        if (obj1.createdAt > obj2.createdAt) {
+          return -1;
+        }
+
+        return 0;
+      });
     });
   }
   async completeTransaction(transaction: Transaction): Promise<void> {

@@ -52,6 +52,17 @@ export class CompanyViewTransactionsComponent implements OnInit {
     this.api.ListTransactions().then(event => {
       this.transactions = event.items as Array<Transaction>;
       console.log(this.transactions);
+      this.transactions = this.transactions.sort((obj1, obj2) => {
+        if (obj1.createdAt < obj2.createdAt) {
+          return 1;
+        }
+
+        if (obj1.createdAt > obj2.createdAt) {
+          return -1;
+        }
+
+        return 0;
+      });
       for (let transaction of this.transactions) {
         if (transaction.status == "completed") {
           this.completedCount++;
