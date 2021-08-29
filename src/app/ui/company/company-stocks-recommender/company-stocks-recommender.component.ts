@@ -33,7 +33,6 @@ export class CompanyStocksRecommenderComponent implements OnInit {
     this.chartLabels = [];
     const dataPromise = await this.retrieveExchangeRate();
     const exchangeRate = dataPromise["Realtime Currency Exchange Rate"]["5. Exchange Rate"]
-    console.log(exchangeRate);
     this.currentPrice = "";
     for (let key in this.data["Monthly Adjusted Time Series"]) {
       if (this.currentPrice == "") {
@@ -48,8 +47,8 @@ export class CompanyStocksRecommenderComponent implements OnInit {
     // this.chartLabels = this.chartLabels.sort();
     this.chartDatasets[0].data = this.chartDatasets[0].data.reverse();
     this.chartLabels = this.chartLabels.reverse();
-    console.log(this.chartDatasets[0].data);
-    console.log(this.chartLabels);
+    // console.log(this.chartDatasets[0].data);
+    // console.log(this.chartLabels);
   }
   public chartType: string = 'line';
 
@@ -67,24 +66,18 @@ export class CompanyStocksRecommenderComponent implements OnInit {
       backgroundColor: 'rgba(105, 0, 132, .2)',
       borderColor: 'rgba(200, 99, 132, .7)',
       borderWidth: 2,
-    },
-    {
-      backgroundColor: 'rgba(0, 137, 132, .2)',
-      borderColor: 'rgba(0, 10, 130, .7)',
-      borderWidth: 2,
     }
+    // ,
+    // {
+    //   backgroundColor: 'rgba(0, 137, 132, .2)',
+    //   borderColor: 'rgba(0, 10, 130, .7)',
+    //   borderWidth: 2,
+    // }
   ];
 
+
   public chartOptions: any = {
-    responsive: true,
-    yAxisID: "Date"
-    // xAxes: [{
-    //   type: 'time',
-    //   ticks: {
-    //     autoSkip: true,
-    //     maxTicksLimit: 2
-    //   }
-    // }]
+    responsive: true
   };
   public chartClicked(e: any): void { }
   public chartHovered(e: any): void { }

@@ -5,6 +5,7 @@
   <div class="card mb-4" *ngFor="let transaction of transactions; let i = index" >
     <div class="card-header">
       Transaction #{{transaction.id}}
+      <br>
       ${{transaction.price}}
     </div>
     <div class="card-body">
