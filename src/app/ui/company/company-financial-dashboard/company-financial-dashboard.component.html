@@ -1,5 +1,79 @@
 <div class="company-financial-dashboard-wrapper">
   <app-header></app-header>
+  <br>
+  <div class="container">
+    <h1> Monthly Report </h1>
+    <br>
+    <div class="row show-grid">
+      <div class="col-md-6"> <h5> Sales to Cost Comparison </h5> </div>
+    </div>
+    <div class="row show-grid">
+      <!-- col 1 -->
+      <div class="col-md-6"> 
+        <div style="display: block">
+          <canvas mdbChart [chartType]="chartType_revenue" [datasets]="chartDatasets_revenue" [labels]="chartLabels_revenue" [colors]="chartColors_revenue" [options]="chartOptions_revenue" [legend]="true"></canvas>
+        </div> 
+      </div>
+      <!-- col 2 -->
+      <div class="col-md-6">  
+        <table mdbTable borderless="true">
+          <thead>
+            <tr>
+              <th *ngFor="let head of headElements" scope="col">{{head}} </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr mdbTableCol *ngFor="let el of elements">
+              <th scope="row">{{el.id}}</th>
+              <td>{{el.sales}}</td>
+              <td>{{el.cost}}</td>
+              <td>{{el.profit}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- 
+      <div class="col-md-6"> 
+        <div style="display: block">
+          <canvas mdbChart [chartType]="chartType_cost" [datasets]="chartDatasets_cost" [labels]="chartLabels_cost" [colors]="chartColors_cost" [options]="chartOptions_cost" [legend]="true"></canvas>
+        </div> 
+      </div>
+      -->
+    </div>
+    <br>
+    <div class="row show-grid">
+      <div class="col-md-6"> <h5> Daily Report </h5> </div>
+    </div>
+    <div class="row show-grid">
+      <div class="col-md-4"> 
+        <br>
+        <p> Peak Hours: 1700 - 1900 </p> 
+        <p> Highest Hourly Revenue: $32.80 </p> 
+        <p> Avg. Revenue Per Hour: $6.60 </p> 
+      </div>
+      <div class="col-md-8">  
+        <div style="display: block">
+          <canvas mdbChart [chartType]="chartType_dailyReport" [datasets]="chartDatasets_dailyReport" [labels]="chartLabels_dailyReport" [colors]="chartColors_dailyReport" [options]="chartOptions_dailyReport" [legend]="true"></canvas>
+        </div> 
+      </div>
+    </div>
+
+    <div class="row show-grid">
+      <div class="col-md-6"> <h5> Top Dishes (Current Month) </h5> </div>
+    </div>
+    <div class="row show-grid">
+      <div class="col-md-12"> 
+        <div style="display: block">
+          <canvas mdbChart [chartType]="chartType_topDishes" [datasets]="chartDatasets_topDishes" [labels]="chartLabels_topDishes" [colors]="chartColors_topDishes" [options]="chartOptions_topDishes" [legend]="true"></canvas>
+        </div> 
+      </div>
+    </div>
+
+
+  </div>
+
+
+  <!-- 
   <table *ngFor="let transaction of transactions; let i = index" class="table table-striped">
     <thead>
     <tr>
@@ -15,5 +89,6 @@
     </tbody>
     <br>
   </table>
+  -->
 
 </div>

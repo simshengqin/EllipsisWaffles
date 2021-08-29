@@ -35,6 +35,7 @@ query GetCompany($id: ID!) {
     type
     latitude
     longitude
+    image_url
     createdAt
     updatedAt
   }
@@ -53,6 +54,7 @@ query ListCompanies(
       type
       latitude
       longitude
+      image_url
       createdAt
       updatedAt
     }
@@ -232,6 +234,43 @@ query ListBusinessProposals(
       other_capital
       cash_on_hand
       other_liablities
+      createdAt
+      updatedAt
+    }
+    nextToken
+  }
+}
+query GetStock($id: ID!) {
+  getStock(id: $id) {
+    id
+    date
+    open
+    high
+    low
+    close
+    adjClose
+    volume
+    symbol
+    createdAt
+    updatedAt
+  }
+}
+query ListStocks(
+  $filter: ModelStockFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listStocks(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      date
+      open
+      high
+      low
+      close
+      adjClose
+      volume
+      symbol
       createdAt
       updatedAt
     }
