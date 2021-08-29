@@ -32,7 +32,7 @@ export class AppComponent implements OnInit, OnDestroy{
         }
         else {
           localStorage.setItem('role', 'user');
-          this.router.navigate(['/user/explore'])
+          this.router.navigate(['/user/home'])
         }
 
         // if (username)
