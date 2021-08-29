@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import {APIService, Company} from '../../../API.service';
+import {APIService, Company, Product} from '../../../API.service';
 @Component({
   selector: 'user-meal-subscription',
   templateUrl: './user-meal-subscription.component.html',
   styleUrls: ['./user-meal-subscription.component.scss']
 })
 export class UserMealSubscriptionComponent implements OnInit {
-
+  products: Product[] = [];
   companies: Company[] = [];
   constructor(
     private api: APIService,

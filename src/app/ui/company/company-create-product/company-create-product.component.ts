@@ -13,16 +13,16 @@ export class CompanyCreateProductComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.createProduct();
+    // this.createProduct();
   }
 
   async createProduct(): Promise<void> {
-    // const newProduct = {
-    //   name: "Fishball Beehoon",
-    //   company_id: "c1fe4026-5c99-4b2b-8bdc-6cb5eaa68d4b",
-    //   image_url: "https://amplify-ellipsiswaffles-dev-155122-deployment.s3.ap-southeast-1.amazonaws.com/pictures/Menu+-+Song+Kee+Fish+Ball+Noodle+-+Fishball+Beehoon.jpg",
-    //   price: 3.55
-    // };
+    const newProduct = {
+      name: "Fishball Beehoon",
+      company_id: "c1fe4026-5c99-4b2b-8bdc-6cb5eaa68d4b",
+      image_url: "https://amplify-ellipsiswaffles-dev-155122-deployment.s3.ap-southeast-1.amazonaws.com/pictures/Menu+-+Song+Kee+Fish+Ball+Noodle+-+Fishball+Beehoon.jpg",
+      price: 3.55
+    };
 
     // const newProduct = {
     //   name: "Dry Fishball Noodles",
