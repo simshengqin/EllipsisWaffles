@@ -6,7 +6,7 @@
     <div class="form-row">
       <div class="form-group col-md-6">
         <label>Company Name</label>
-        <input type="text" class="form-control" placeholder="Company Name" name="company_name" [(ngModel)]="newLoan.company_name" required>
+        <input type="text" class="form-control" placeholder="Song Kee Fish Ball Noodle" readonly name="company_name" [(ngModel)]="newLoan.company_name" required>
       </div>
       <div class="form-group col-md-6">
         <label>Loan Amount</label>
@@ -16,17 +16,26 @@
     <div class="form-row">
       <div class="form-group col-md-6">
         <label>Company Address</label>
-        <input type="text" class="form-control" placeholder="Company Address" name="company_address" [(ngModel)]="newLoan.company_address" required>
+        <input type="text" class="form-control" placeholder="Blk 79 Circuit Rd, #01-06, Singapore 370079" readonly name="company_address" [(ngModel)]="newLoan.company_address" required>
       </div>
-      <div class="form-group col-md-6">
-        <label>Payment Period</label>
-        <input type="text" class="form-control" placeholder="Payment Period" name="payment_period" [(ngModel)]="newLoan.payment_period" required>
+      <div class="form-row">
+        <div class="form-group auto-mx p">
+      <label>Payment Period</label>
+        <select class="form-control" aria-label="Default select example" [(ngModel)]="newLoan.payment_period">
+          <option value="1" selected>Monthly</option>
+          <option value="2">Quarterly</option>
+          <option value="3">Yearly</option>
+          <!--<input type="text" class="form-control" placeholder="Payment Period" name="payment_period" [(ngModel)]="newLoan.payment_period" required>-->
+        </select>        
       </div>
+      </div>
+
+
     </div>
     <div class="form-row">
       <div class="form-group col-md-6">
         <label>Company Number</label>
-        <input type="number" class="form-control" placeholder="Company Number" name="company_name" [(ngModel)]="newLoan.company_number" required>
+        <input type="number" class="form-control" placeholder="65653789" readonly name="company_name" [(ngModel)]="newLoan.company_number" required>
       </div>
       <div class="form-group col-md-6">
         <label>Interest Rate</label>
@@ -69,7 +78,7 @@
     <div class="form-row">
       <div class="form-group col-md-6">
         <label>Monthly Revenue</label>
-        <input type="number" class="form-control" placeholder="$16,000" name="monthly_revenue" [(ngModel)]="newBusinessProposal.monthly_revenue" required>
+        <input type="number" class="form-control" placeholder="$16,000" readonly name="monthly_revenue" [(ngModel)]="newBusinessProposal.monthly_revenue" required>
       </div>
       <div class="form-group col-md-6">
         <label>Company Asset</label>
@@ -79,7 +88,7 @@
     <div class="form-row">
       <div class="form-group col-md-6">
         <label>Monthly Expense</label>
-        <input type="number" class="form-control" placeholder="$7,010" name="monthly_expense" [(ngModel)]="newBusinessProposal.monthly_expense" required>
+        <input type="number" class="form-control" placeholder="$7,010" readonly name="monthly_expense" [(ngModel)]="newBusinessProposal.monthly_expense" required>
       </div>
       <div class="form-group col-md-6">
         <label>Other Capital</label>
@@ -89,7 +98,7 @@
     <div class="form-row">
       <div class="form-group col-md-6">
         <label>Monthly Profit</label>
-        <input type="number" class="form-control" placeholder="$8,990" name="monthly_profit" [(ngModel)]="newBusinessProposal.monthly_profit" required>
+        <input type="number" class="form-control" placeholder="$8,990" readonly name="monthly_profit" [(ngModel)]="newBusinessProposal.monthly_profit" required>
       </div>
       <div class="form-group col-md-6">
         <label>Cash on hand</label>
@@ -99,7 +108,7 @@
     <div class="form-row">
       <div class="form-group col-md-6">
         <label>Available Goldman Sachs Account</label>
-        <input type="number" class="form-control" placeholder="$20,000" name="Available_Goldman_Sachs_Account" [(ngModel)]="newBusinessProposal.available_goldman_sachs_account" required>
+        <input type="number" class="form-control" placeholder="$20,000" readonly name="Available_Goldman_Sachs_Account" [(ngModel)]="newBusinessProposal.available_goldman_sachs_account" required>
       </div>
       <div class="form-group col-md-6">
         <label>Other Liabiliities</label>
