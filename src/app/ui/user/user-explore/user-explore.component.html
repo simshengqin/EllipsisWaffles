@@ -14,8 +14,7 @@
   
   <br><br><br><br>
   <div class="container">
-    <h1>Hawker Stalls</h1>
-  
+    <h1>Hawker Stalls</h1><br>
   
   <div class="card-columns">
     <div *ngFor="let company of companies">
@@ -30,7 +29,7 @@
 
   <br><br><br><br>
   <div class="container">
-    <h1>Meal Subscription</h1>
+    <h1>Meal Subscription</h1><br>
   </div>
   
   <div class="row row-cols-1 row-cols-md-2 g-4">
@@ -40,7 +39,7 @@
         <div class="card-body">
           <h5 class="card-title">3 Meals Plan</h5>
           <p class="card-text">New to our subscription? Try out our 3 meals prepared just for you.</p>
-          <a href="" class="btn btn-primary">Order Now</a>
+          <!-- <a routerLink="/user/meal-subscription" class="btn btn-primary">Order Now</a> -->
         </div>
       </div>
     </div>
@@ -50,15 +49,18 @@
         <div class="card-body">
           <h5 class="card-title">7 Meals Plan</h5>
           <p class="card-text">Subscribe to our 1 week plan, extendable to 1 month.</p>
-          <a href="#" class="btn btn-primary">Order Now</a>
+          <!-- <a routerLink="/user/meal-subscription" class="btn btn-primary">Order Now</a> -->
         </div>
       </div>
     </div>
   </div>
 
+  <br>
+  <button type="button" routerLink="/user/meal-subscription" class="btn btn-outline-primary">Check out the meals available</button>
+
   <br><br><br><br>
   <div class="container">
-    <h1>Food Categories</h1>
+    <h1>Food Categories</h1><br>
   </div>
 
   <div class="card-deck">
@@ -66,7 +68,7 @@
       <img class="card-img-top" src="https://amplify-ellipsiswaffles-dev-155122-deployment.s3.ap-southeast-1.amazonaws.com/pictures/Western-Food-Stalls-5-Star-Corner.jpg" alt="Card image cap" height="220" width="60">
       <div class="card-body">
         <h5 class="card-title">Western</h5>
-        <p class="card-text">A hearty meal is always guaranteed with some Western food.</p>
+        <p class="card-text">A hearty meal is always guaranteed with some Western food. Order now!</p>
         <a href="#" class="btn btn-primary">Order Now</a>
       </div>
     </div>

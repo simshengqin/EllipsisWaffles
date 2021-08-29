@@ -8,6 +8,7 @@ import {APIService, Company, Product} from '../../../API.service';
 export class UserMealSubscriptionComponent implements OnInit {
   products: Product[] = [];
   companies: Company[] = [];
+  isThreeMeal: string = "false";
   constructor(
     private api: APIService,
   ) { }
