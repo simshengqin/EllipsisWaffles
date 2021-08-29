@@ -11,6 +11,8 @@ export class CompanyViewTransactionsComponent implements OnInit {
 
   time!:string;
   transactions: Transaction[] = [];
+  completedCount = 0;
+  rejectedCount = 0;
   constructor(
     private api: APIService,
     private toastrService: ToastrService,
@@ -50,7 +52,16 @@ export class CompanyViewTransactionsComponent implements OnInit {
     this.api.ListTransactions().then(event => {
       this.transactions = event.items as Array<Transaction>;
       console.log(this.transactions);
+      for (let transaction of this.transactions) {
+        if (transaction.status == "completed") {
+          this.completedCount++;
+        }
+        if (transaction.status == "rejected") {
+          this.rejectedCount++;
+        }
+      }
     });
+
   }
 
   async markAsReady(transaction: Transaction): Promise<void> {

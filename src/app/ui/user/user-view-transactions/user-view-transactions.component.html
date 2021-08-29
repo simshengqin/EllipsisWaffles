@@ -13,7 +13,10 @@
       <p class="card-text">{{transaction.company_address}}</p>
       <p class="card-text">{{transaction.product_name}}</p>
       <p class="card-text">Status: {{transaction.status | titlecase}}</p>
-      <p class="card-text" *ngIf="transaction.status == 'Preparing'">Estimated completion time: 18:00pm</p>
+      <p class="card-text" *ngIf="transaction.status == 'preparing'">Estimated completion time: 18:00pm</p>
+      <div>
+        <button *ngIf="transaction.status == 'prepared'" type="button" class="btn btn-success" (click)="completeTransaction(transaction)">Confirm collection </button>
+      </div>
 <!--      <button class="btn btn-success">Received order</button>-->
     </div>
   </div>

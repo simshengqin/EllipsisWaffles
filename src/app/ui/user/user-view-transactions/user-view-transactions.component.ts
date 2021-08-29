@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {APIService, Company, Transaction} from "../../../API.service";
+import {APIService, Company, Transaction, UpdateTransactionInput} from "../../../API.service";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-user-view-transactions',
@@ -10,6 +11,7 @@ export class UserViewTransactionsComponent implements OnInit {
   transactions: Transaction[] = [];
   constructor(
     private api: APIService,
+    private toastrService: ToastrService,
   ) { }
 
   ngOnInit(): void {
@@ -21,6 +23,15 @@ export class UserViewTransactionsComponent implements OnInit {
       this.transactions = event.items as Array<Transaction>;
       console.log(this.transactions);
     });
+  }
+  async completeTransaction(transaction: Transaction): Promise<void> {
+    const updateTransactionInput: UpdateTransactionInput = {
+      id: transaction.id,
+      status: 'completed'
+    };
+    await this.api.UpdateTransaction(updateTransactionInput);
+    this.loadTransactions();
+    this.toastrService.success('Successfully collected order!');
   }
 
 }
