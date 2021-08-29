@@ -27,4 +27,16 @@
             (chartClick)="chartClicked($event)">
     </canvas>
   </div>
+  <div style="display: block">
+    <canvas mdbChart
+            [chartType]="chartType2"
+            [datasets]="chartDatasets2"
+            [labels]="chartLabels2"
+            [colors]="chartColors2"
+            [options]="chartOptions2"
+            [legend]="true"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)">
+    </canvas>
+  </div>
 </div>

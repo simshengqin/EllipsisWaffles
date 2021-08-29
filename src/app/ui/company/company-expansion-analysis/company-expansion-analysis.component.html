@@ -11,26 +11,26 @@
 
     <div class="card-group">
       <div class="card">
-        <img src="..." class="card-img-top" alt="...">
+        <img src="../../../../assets/images/hawkers/6th Avenue Wanton Mee.jpg" width="286" height="200" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <h5 class="card-title"> 6th Avenue Wanton Mee </h5>
+          <p class="card-text"> <b>Address:</b> 24 Sixth Ave, Good Good Eating House, Singapore 276481 </p>
           <button type="button" class="btn btn-danger" (click)="switch('com1')"> View </button>
         </div>
       </div>
       <div class="card">
-        <img src="..." class="card-img-top" alt="...">
+        <img src="../../../../assets/images/hawkers/Tong Siew Fried Rice.jfif"  width="286" height="200" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          <h5 class="card-title"> Tong Siew Fried Rice </h5>
+          <p class="card-text"> <b>Address:</b> 43 Owen Rd, #01-23, Singapore 218864 </p>
           <button type="button" class="btn btn-primary" (click)="switch('com2')"> View </button>
         </div>
       </div>
       <div class="card">
-        <img src="..." class="card-img-top" alt="...">
+        <img src="../../../../assets/images/hawkers/Zam Zam.png"  width="286" height="200" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          <h5 class="card-title"> Zam Zam </h5>
+          <p class="card-text"> <b>Address:</b>  697-699 North Bridge Rd, Singapore 198675 </p>
           <button type="button" class="btn btn-secondary" (click)="switch('com3')"> View </button>
         </div>
       </div>
@@ -40,8 +40,22 @@
 
     <h1> Google Map </h1>
 
-    <div class="justify-content-center">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63820.60334112111!2d103.75221505939498!3d1.302320617605371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m3!3e0!4m0!4m0!5e0!3m2!1sen!2ssg!4v1630172452893!5m2!1sen!2ssg" width="900" height="430" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <div *ngIf="viewCompany1">
+      <div class="align-items-center">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.742505053485!2d103.79274061475395!3d1.3305759990295483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da109edd76d13f%3A0xab961777c1d795a9!2s6th%20Avenue%20Wanton%20Mee!5e0!3m2!1sen!2ssg!4v1630218287049!5m2!1sen!2ssg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div *ngIf="viewCompany2">
+      <div class="justify-content-center">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7654681688887!2d103.84819971344771!3d1.316298299039949!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19c35923e283%3A0xac3092dbbe5635d!2sTong%20Siew%20Fried%20Rice!5e0!3m2!1sen!2ssg!4v1630218488743!5m2!1sen!2ssg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <div *ngIf="viewCompany3">
+      <div class="justify-content-center">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.7879606356946!2d103.85632241344774!3d1.302161499050264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da19a517c53f6d%3A0x3c7f94a331e9d5b0!2sZam%20Zam%20Restaurant%2C%20Singapore!5e0!3m2!1sen!2ssg!4v1630218425011!5m2!1sen!2ssg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
     </div>
     <hr class="solid">
 

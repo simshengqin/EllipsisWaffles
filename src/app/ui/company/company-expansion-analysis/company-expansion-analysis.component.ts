@@ -81,7 +81,7 @@ export class CompanyExpansionAnalysisComponent implements OnInit {
     if(data=="com2"){
       this.viewCompany1 = false
       this.viewCompany2 = true
-      this.viewCompany3 = true
+      this.viewCompany3 = false
     }
     if(data=="com3"){
       this.viewCompany1 = false
