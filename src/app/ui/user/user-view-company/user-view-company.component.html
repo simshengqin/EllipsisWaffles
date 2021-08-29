@@ -8,18 +8,21 @@
     <h6><b>Address:</b> Blk 79 Circuit Rd, #01-06, Singapore 370079</h6>
   </div>
 
-  <br><br>
+  <br>
   <div class="container-fluid">
-    <h2>Now what do we have here...</h2>
+    <hr>
+    <h2>Menu Items</h2>
 
   <div class="card-columns">
     <div class="card" *ngFor="let product of products">
         <img src="{{product.image_url}}" class="card-img-top card-image" height="300" width="100">
         <div class="card-body">
           <h5 class="card-title">{{product.name}}</h5>
-          <a routerLink="/user/view-company" class="btn btn-primary">Order Now</a>
+          <h6>${{product.price}}</h6>
+          <button (click)="redirectToCheckout(product.id)" class="btn btn-outline-primary">Order Now</button>
         </div>
     </div>
   </div>
   </div>
+  <br><br>
 </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import {APIService, Company, Product} from '../../../API.service';
 @Component({
   selector: 'user-meal-subscription',
@@ -11,6 +13,8 @@ export class UserMealSubscriptionComponent implements OnInit {
   isThreeMeal: string = "false";
   constructor(
     private api: APIService,
+    private router: Router,
+    private toastrService: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -43,5 +47,18 @@ export class UserMealSubscriptionComponent implements OnInit {
       console.log(this.companies);
     });
   }
-
+  async createTransaction(company_name1: string, product_name1: string, price1: number): Promise<void> {
+    const newTransaction = {
+      user_id: "1",
+      company_name: company_name1,
+      company_address: "100 Yio Chu Kang Rd, Singapore 545576",
+      product_name: product_name1,
+      price: price1,
+      status: "preparing",
+    };
+    const newTransactionDB = await this.api.CreateTransaction(newTransaction);
+    this.toastrService.success('Successfully confirmed order of ' + product_name1 + " from " + company_name1);
+    this.router.navigate(['/user/view-transactions']);
+    console.log(newTransactionDB);
+  }
 }
