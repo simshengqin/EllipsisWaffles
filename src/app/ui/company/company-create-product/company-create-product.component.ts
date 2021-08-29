@@ -59,8 +59,8 @@ export class CompanyCreateProductComponent implements OnInit {
     //   price: 3.50,
     // };
 
-    const newProductDB = await this.api.CreateProduct(newProduct);
-    console.log(newProductDB);
+    // const newProductDB = await this.api.CreateProduct(newProduct);
+    // console.log(newProductDB);
   }
 
 }

@@ -30,6 +30,7 @@ import {FormsModule} from "@angular/forms";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ToastrModule} from "ngx-toastr";
 import { CompanyStocksRecommenderComponent } from './ui/company/company-stocks-recommender/company-stocks-recommender.component';
+import {HttpClientModule} from "@angular/common/http";
 Amplify.configure(awsconfig);
 
 @NgModule({
@@ -68,6 +69,7 @@ Amplify.configure(awsconfig);
       positionClass: 'toast-top-center',
       preventDuplicates: true,
     }),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

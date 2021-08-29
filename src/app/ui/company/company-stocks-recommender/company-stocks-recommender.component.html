@@ -1,1 +1,30 @@
-<p>company-stocks-recommender works!</p>
+<app-header></app-header>
+
+<div class="company-stocks-recommender-wrapper">
+  <h1>Stocks Recommender</h1>
+  <br>
+  <p class="text-align-center">Choose a stock to display in the chart below! Prices are in SGD</p>
+
+
+  <select class="mx-auto" [(ngModel)]="ticker" class="mx-auto" (change)="updateChart()">
+    <option value="SPY">SPOR S&P 500 ETF</option>
+    <option value="ARKG">ARK Genomic Revolution ETF</option>
+    <option value="ARKQ">ARK Autonomous Technology & Robotics ETF</option>
+    <option value="ARKW" selected>ARK Next Generation Internet ETF</option>
+    <option value="VTI">Vanguard Total Stock Market ETF</option>
+
+  </select>
+  <p class="text-align-right mt-1">Current Price: <span class="fw-bold">${{currentPrice}}</span></p>
+  <div style="display: block">
+    <canvas mdbChart
+            [chartType]="chartType"
+            [datasets]="chartDatasets"
+            [labels]="chartLabels"
+            [colors]="chartColors"
+            [options]="chartOptions"
+            [legend]="true"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)">
+    </canvas>
+  </div>
+</div>
