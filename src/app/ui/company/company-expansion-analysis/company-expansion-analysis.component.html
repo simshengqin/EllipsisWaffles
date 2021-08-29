@@ -1,5 +1,126 @@
 <div class="company-expansion-analysis-wrapper">
   <app-header></app-header>
+  <br>
+  <div class="container">
+    <h1> Expansion Analysis </h1>
+    <br> 
+
+    <div class="justify-content-center">
+      <h3 > Top 3 popular Hawker </h3>
+    </div>
+
+    <div class="card-group">
+      <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <button type="button" class="btn btn-danger" (click)="switch('com1')"> View </button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          <button type="button" class="btn btn-primary" (click)="switch('com2')"> View </button>
+        </div>
+      </div>
+      <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+          <button type="button" class="btn btn-secondary" (click)="switch('com3')"> View </button>
+        </div>
+      </div>
+    </div>
+
+    <hr class="solid">
+
+    <h1> Google Map </h1>
+
+    <div class="justify-content-center">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63820.60334112111!2d103.75221505939498!3d1.302320617605371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m3!3e0!4m0!4m0!5e0!3m2!1sen!2ssg!4v1630172452893!5m2!1sen!2ssg" width="900" height="430" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+    <hr class="solid">
+
+    <!-- COMPANY 1 -->
+    <div *ngIf="viewCompany1">
+        <div class="row show-grid">
+          <!-- dropdown -->
+          <div class="col-md-12"> 
+            <div class="btn-group" mdbDropdown>
+              <button type="button" mdbBtn color="danger" class="waves-light" mdbWavesEffect> Select Year </button>
+              <button type="button" mdbDropdownToggle mdbBtn color="danger" class="dropdown-toggle dropdown-toggle-split px-3 waves-light"
+                mdbWavesEffect></button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" (click)='switchYear("2020")'>2020</a>
+                <a class="dropdown-item" (click)='switchYear("2019")'>2019</a>
+              </div>
+            </div>
+          </div>
+          <!-- Chart -->
+          <div class="col-md-12"> 
+            <div style="display: block">
+              <canvas mdbChart [chartType]="chartType_com1" [datasets]="chartDatasets_com1" [labels]="chartLabels_com1" [colors]="chartColors_com1" [options]="chartOptions_com1" [legend]="true"></canvas>
+            </div> 
+          </div>
+        </div>
+      
+    </div>
+    <!-- END OF COMPANY 1 -->
+    <!-- COMPANY 2 -->
+    <div *ngIf="viewCompany2">
+      <div class="row show-grid">
+        <!-- dropdown -->
+        <div class="col-md-12"> 
+          <div class="btn-group" mdbDropdown>
+            <button type="button" mdbBtn color="primary" class="waves-light" mdbWavesEffect> Select Year </button>
+            <button type="button" mdbDropdownToggle mdbBtn color="primary" class="dropdown-toggle dropdown-toggle-split px-3 waves-light"
+              mdbWavesEffect></button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" (click)='switchYear("2020")'>2020</a>
+              <a class="dropdown-item" (click)='switchYear("2019")'>2019</a>
+            </div>
+          </div>
+        </div>
+        <!-- Chart -->
+        <div class="col-md-12"> 
+          <div style="display: block">
+            <canvas mdbChart [chartType]="chartType_com2" [datasets]="chartDatasets_com2" [labels]="chartLabels_com2" [colors]="chartColors_com2" [options]="chartOptions_com2" [legend]="true"></canvas>
+          </div> 
+        </div>
+      </div>
+
+    </div>
+    <!-- END OF COMPANY 2 -->
+    <!-- COMPANY 3 -->
+    <div *ngIf="viewCompany3">
+      <div class="row show-grid">
+        <!-- dropdown -->
+        <div class="col-md-12"> 
+          <div class="btn-group" mdbDropdown>
+            <button type="button" mdbBtn color="secondary" class="waves-light" mdbWavesEffect> Select Year </button>
+            <button type="button" mdbDropdownToggle mdbBtn color="secondary" class="dropdown-toggle dropdown-toggle-split px-3 waves-light"
+              mdbWavesEffect></button>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" (click)='switchYear("2020")'>2020</a>
+              <a class="dropdown-item" (click)='switchYear("2019")'>2019</a>
+            </div>
+          </div>
+        </div>
+        <!-- Chart -->
+        <div class="col-md-12"> 
+          <div style="display: block">
+            <canvas mdbChart [chartType]="chartType_com3" [datasets]="chartDatasets_com3" [labels]="chartLabels_com3" [colors]="chartColors_com3" [options]="chartOptions_com3" [legend]="true"></canvas>
+          </div> 
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <!-- 
   <table *ngFor="let transaction of transactions; let i = index" class="table table-striped">
     <thead>
     <tr>
@@ -15,5 +136,8 @@
     </tbody>
     <br>
   </table>
+  -->
+  <br>
+
 
 </div>
