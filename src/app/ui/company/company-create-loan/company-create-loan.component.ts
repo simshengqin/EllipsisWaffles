@@ -39,6 +39,9 @@ export class CompanyCreateLoanComponent implements OnInit {
     //   status: "Received",
     //   business_proposal_id: "ABC123",
     // };
+    this.newLoan.company_name = "Song Kee Fish Ball Noodle";
+    this.newLoan.company_address = "Blk 79 Circuit Rd, #01-06, Singapore 370079";
+    this.newLoan.company_number = 65653789;
     this.newLoan.status = "unapproved";
     this.newLoan.amount_unpaid = this.newLoan.loan_amount;
     this.newLoan.loan_approval_date = "-"

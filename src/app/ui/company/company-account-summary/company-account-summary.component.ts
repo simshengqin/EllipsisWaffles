@@ -7,6 +7,7 @@ import {Router} from "@angular/router";
   templateUrl: './company-account-summary.component.html',
   styleUrls: ['./company-account-summary.component.scss']
 })
+
 export class CompanyAccountSummaryComponent implements OnInit {
   financeAccounts: FinanceAccount[] = [];
   loans: Loan[] = [];
@@ -47,5 +48,9 @@ export class CompanyAccountSummaryComponent implements OnInit {
     this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
       this.router.navigate(['company/view-loan'], {queryParams: {id: loan.id}}));
   }
+
 }
+
+
+
 

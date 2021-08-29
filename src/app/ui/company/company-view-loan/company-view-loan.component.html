@@ -69,5 +69,25 @@
     </tbody>
     <br>
   </table>
+<br>
+<br>
+<div class="row align-items-center justify-content-center">
+  <div class = col-md-6 mx-auto align-items-center width="500" height ="500">
+    <h3 class="text-center"> Loan Breakdown </h3>
+  <div style="display: block">
+    <canvas mdbChart
+        [chartType]="chartType"
+        [datasets]="chartDatasets"
+        [labels]="chartLabels"
+        [colors]="chartColors"
+        [options]="chartOptions"
+        [legend]="true"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)">
+    </canvas>
+  </div>
+  </div>  
+</div>
+
 
 </div>
