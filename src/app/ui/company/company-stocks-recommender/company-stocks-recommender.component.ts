@@ -50,7 +50,9 @@ export class CompanyStocksRecommenderComponent implements OnInit {
     // this.chartLabels = this.chartLabels.sort();
     this.chartDatasets[0].data = this.chartDatasets[0].data.reverse();
     this.chartDatasets[1].data = this.chartDatasets[1].data.reverse();
+    this.chartDatasets2[0].data = this.chartDatasets2[0].data.reverse();
     this.chartLabels = this.chartLabels.reverse();
+    this.chartLabels2 = this.chartLabels2.reverse();
     // console.log(this.chartDatasets[0].data);
     // console.log(this.chartLabels);
   }
@@ -58,7 +60,7 @@ export class CompanyStocksRecommenderComponent implements OnInit {
 
   public chartDatasets: Array<any> = [
     { data: [], label: this.ticker},
-    { data: [], label: "(Adjusted open - close) / open"},
+    { data: [], label: "Monthly Return"},
     // { data: [65, 59, 80, 81, 56, 55, 40], label: 'My First dataset' },
     // { data: [28, 48, 40, 19, 86, 27, 90], label: 'My Second dataset' }
   ];
