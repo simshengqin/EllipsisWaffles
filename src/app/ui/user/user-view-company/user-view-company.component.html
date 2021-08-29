@@ -1,4 +1,32 @@
-<div class="user-view-company-wrapper">
+<div class="user-meal-subscription-wrapper">
+  <app-header></app-header>
+
+  <br>
+  <div class="container-fluid">
+    <h2>Song Kee Fish Ball Noodle</h2>
+    <h6><b>Ratings:</b> 4.4</h6>
+    <h6><b>Address:</b> Blk 79 Circuit Rd, #01-06, Singapore 370079</h6>
+  </div>
+
+  <br><br>
+  <div class="container-fluid">
+    <h2>Now what do we have here...</h2>
+
+    <div *ngFor="let product of products" class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <img src="" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{product.name}}</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+<!-- <div class="user-view-company-wrapper">
   <app-header></app-header>
   <table *ngFor="let product of products; let i = index" class="table table-striped">
     <thead>
@@ -16,4 +44,4 @@
     <br>
   </table>
 
-</div>
+</div> -->
