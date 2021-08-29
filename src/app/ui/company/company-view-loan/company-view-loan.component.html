@@ -69,5 +69,22 @@
     </tbody>
     <br>
   </table>
+<br>
+<h3> Loan Breakdown </h3>
+<br>
+  <div class = col-md-6 d-flex justify-content-center text-center width="500" height ="500">
+  <div style="display: block">
+    <canvas mdbChart
+        [chartType]="chartType"
+        [datasets]="chartDatasets"
+        [labels]="chartLabels"
+        [colors]="chartColors"
+        [options]="chartOptions"
+        [legend]="true"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)">
+    </canvas>
+  </div>
+</div>
 
 </div>
