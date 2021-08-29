@@ -19,11 +19,11 @@
   
   <div class="card-columns">
     <div *ngFor="let company of companies">
-      <img src={{company.image_url}} class="card-img-top" height="220" width="100">
+      <img src="{{company.image_url}}" class="card-img-top" height="220" width="100">
       <div class="card-body">
         <h5 class="card-title">{{company.name}}</h5>
         <p class="card-text">Address: {{company.address}}<br>Rating: {{company.rating}}</p>
-        <a href="#" class="btn btn-primary">Order Now</a>
+        <a routerLink="/user/view-company" class="btn btn-primary">Order Now</a>
       </div>
     </div>
   </div>
@@ -40,7 +40,7 @@
         <div class="card-body">
           <h5 class="card-title">3 Meals Plan</h5>
           <p class="card-text">New to our subscription? Try out our 3 meals prepared just for you.</p>
-          <a href="#" class="btn btn-primary">Order Now</a>
+          <a href="" class="btn btn-primary">Order Now</a>
         </div>
       </div>
     </div>

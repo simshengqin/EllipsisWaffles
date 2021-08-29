@@ -1,7 +1,7 @@
-<div class="user-meal-subscription-wrapper">
+<div class="user-view-company-wrapper">
   <app-header></app-header>
 
-  <br>
+  <br><br>
   <div class="container-fluid">
     <h2>Song Kee Fish Ball Noodle</h2>
     <h6><b>Ratings:</b> 4.4</h6>
@@ -12,36 +12,14 @@
   <div class="container-fluid">
     <h2>Now what do we have here...</h2>
 
-    <div *ngFor="let product of products" class="row row-cols-1 row-cols-md-3 g-4">
-      <div class="col">
-        <div class="card h-100">
-          <img src="" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">{{product.name}}</h5>
-            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          </div>
+  <div class="card-columns">
+    <div class="card" *ngFor="let product of products">
+        <img src="{{product.image_url}}" class="card-img-top card-image" height="300" width="100">
+        <div class="card-body">
+          <h5 class="card-title">{{product.name}}</h5>
+          <a routerLink="/user/view-company" class="btn btn-primary">Order Now</a>
         </div>
-      </div>
     </div>
+  </div>
+  </div>
 </div>
-
-
-<!-- <div class="user-view-company-wrapper">
-  <app-header></app-header>
-  <table *ngFor="let product of products; let i = index" class="table table-striped">
-    <thead>
-    <tr>
-      <th scope="col">Key</th>
-      <th scope="col">Value</th>
-    </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let item of product | keyvalue">
-        <td>{{item.key}}</td>
-        <td>{{item.value}}</td>
-      </tr>
-    </tbody>
-    <br>
-  </table>
-
-</div> -->
