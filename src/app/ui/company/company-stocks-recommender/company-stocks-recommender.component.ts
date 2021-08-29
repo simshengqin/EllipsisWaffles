@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as Http from "http";
 import {HttpClient} from "@angular/common/http";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'app-company-stocks-recommender',
@@ -13,32 +14,40 @@ export class CompanyStocksRecommenderComponent implements OnInit {
   currentPrice: string;
   constructor(
     private httpClient: HttpClient,
+    private toastrService: ToastrService
   ) { }
 
   async ngOnInit(): Promise<void> {
     await this.updateChart();
   }
-  retrieveExchangeRate(): Promise<any> {
-    console.log("updating stock..");
-    return this.httpClient.get('https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=SGD&apikey=3Z4DKJIWKLCMPT93').toPromise();
-  }
+  // retrieveExchangeRate(): Promise<any> {
+  //   console.log("updating stock..");
+  //   // return this.httpClient.get('https://www.alphavantage.co/query?function=CURRENCY_EXCHANGE_RATE&from_currency=USD&to_currency=SGD&apikey=YO0BS02D8Z9BUHXM' +
+  //   //   '').toPromise();
+  // }
   retrieveStock(): Promise<any> {
     console.log("updating stock..");
-    return this.httpClient.get('https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY_ADJUSTED&symbol=' + this.ticker + '&outputsize=compact&apikey=3Z4DKJIWKLCMPT93').toPromise();
+    return this.httpClient.get('https://www.alphavantage.co/query?function=TIME_SERIES_MONTHLY_ADJUSTED&symbol=' + this.ticker + '&outputsize=compact&apikey=YO0BS02D8Z9BUHXM').toPromise();
   }
   async updateChart() {
     this.data = await this.retrieveStock();
+    if (!this.data["Monthly Adjusted Time Series"]) {
+      this.toastrService.error('Too frequent calls! Please wait a while or try again. If it still does not work, the API key has reached its limit. Change it accordingly');
+    }
     console.log(this.data);
     this.chartDatasets[0].data = [];
+    this.chartDatasets2[0].data = [];
     this.chartLabels = [];
-    const dataPromise = await this.retrieveExchangeRate();
-    const exchangeRate = dataPromise["Realtime Currency Exchange Rate"]["5. Exchange Rate"]
+    // const dataPromise = await this.retrieveExchangeRate();
+    // const exchangeRate = dataPromise["Realtime Currency Exchange Rate"]["5. Exchange Rate"]
+    const exchangeRate = "1.3456";
     this.currentPrice = "";
     for (let key in this.data["Monthly Adjusted Time Series"]) {
       if (this.currentPrice == "") {
         this.currentPrice = this.data["Monthly Adjusted Time Series"][key]["5. adjusted close"];
       }
       let value = this.data["Monthly Adjusted Time Series"][key];
+
       this.chartDatasets[0].data.push(+value["5. adjusted close"] * +exchangeRate);
       this.chartDatasets[1].data.push(((+value["1. open"] - +value["5. adjusted close"]) / +value["1. open"]) * 100);
       this.chartLabels.push(key);
@@ -53,8 +62,8 @@ export class CompanyStocksRecommenderComponent implements OnInit {
     this.chartDatasets2[0].data = this.chartDatasets2[0].data.reverse();
     this.chartLabels = this.chartLabels.reverse();
     this.chartLabels2 = this.chartLabels2.reverse();
-    // console.log(this.chartDatasets[0].data);
-    // console.log(this.chartLabels);
+    console.log(this.chartDatasets[0].data);
+    console.log(this.chartLabels);
   }
   public chartType: string = 'line';
 
